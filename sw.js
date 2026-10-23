@@ -1,5 +1,6 @@
 
-const CACHE='development-wallet-v2';
+const CACHE='development-wallet-v3';
+
 const ASSETS=[
   './',
   './index.html',
@@ -27,15 +28,16 @@ self.addEventListener('activate',e=>
 
 self.addEventListener('fetch',e=>{
   if(e.request.method!=='GET')return;
+
   e.respondWith(
     fetch(e.request)
       .then(r=>{
         if(r.ok){
           const copy=r.clone();
-          caches.open(CACHE).then(c=>c.put(e.request,copy))
+          caches.open(CACHE).then(c=>c.put(e.request,copy));
         }
-        return r
+        return r;
       })
       .catch(()=>caches.match(e.request))
-  )
+  );
 });
