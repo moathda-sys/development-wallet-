@@ -1,13 +1,400 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0f172a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="محفظتي"><title>محفظة التطوير</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml"><style>
-:root{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:#17233b;background:#f5f7fc;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.35;cursor:not-allowed}.app{max-width:760px;margin:auto;padding:22px 16px 105px}.muted{color:#8290a4}.eyebrow{font-size:12px;font-weight:700;color:#64748b}.top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:18px}h1{font-size:25px;margin:5px 0 0;letter-spacing:-.7px}.date{font-size:12px;color:#64748b;margin-top:8px}.iconbutton{border:1px solid #e2e8f0;background:white;border-radius:13px;padding:9px 12px;color:#475569}.hero{background:linear-gradient(127deg,#15243f,#263e66);color:white;border-radius:23px;padding:21px;margin-bottom:16px;box-shadow:0 10px 25px #172e5b21}.hero .muted{color:#b5c5dd}.herohead{display:flex;justify-content:space-between;align-items:center}.big{font-size:31px;font-weight:800;letter-spacing:-1px;margin:9px 0}.track{height:9px;border-radius:20px;background:#e2e8f0;overflow:hidden}.hero .track{background:#ffffff2f}.fill{height:100%;background:#69d7ba;border-radius:20px;transition:width .2s}.herofoot{display:flex;justify-content:space-between;font-size:12px;margin-top:12px;color:#d2dced}.panel{background:white;border:1px solid #e9edf4;box-shadow:0 4px 13px #22335408;border-radius:19px;margin-bottom:11px;padding:17px}.line{display:flex;align-items:center;justify-content:space-between;gap:10px}.labeltitle{font-size:15px;font-weight:750}.sub{font-size:12px;color:#8793a6;margin-top:5px}.pill{background:#f3f6fb;color:#475569;padding:6px 10px;border-radius:10px;font-size:12px;white-space:nowrap}.panel .track{margin:14px 0 12px;height:6px}.controls{display:flex;align-items:center;justify-content:space-between;gap:8px}.small{font-size:12px;color:#64748b}.counter{display:flex;align-items:center;gap:8px}.square{width:33px;height:33px;border:1px solid #e2e8f0;border-radius:10px;background:white;color:#34445f;font-size:19px}.number{font-size:13px;min-width:15px;text-align:center;font-weight:700}.action{border:none;border-radius:12px;background:#eff5ff;color:#2559b3;font-size:12px;font-weight:750;padding:10px 13px}.action.primary{background:#205ad1;color:white}.entries{margin-top:12px;display:flex;flex-direction:column;gap:7px}.entry{background:#f7f9fc;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:8px}.entry .text{flex:1;min-width:0}.entry strong{display:block;font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.entry small{font-size:11px;color:#8b97a7}.remove{border:0;background:transparent;color:#94a3b8;font-size:19px}.hint{font-size:11px;color:#8190a4;margin-top:8px}.bottom{position:fixed;bottom:0;left:0;right:0;background:#fffefef2;backdrop-filter:blur(10px);border-top:1px solid #e6eaf0;display:flex;justify-content:center;padding:10px max(15px,env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom));z-index:4;gap:10px}.tab{border:0;background:transparent;border-radius:13px;width:min(48%,220px);padding:10px;color:#7f8ca0;font-weight:750}.tab.active{background:#eaf1ff;color:#2757b1}.hide{display:none!important}.dayOff{font-size:12px;background:#eaf5ee;color:#32845b;border-radius:12px;padding:10px 14px;margin:10px 0 15px}.backdrop{position:fixed;inset:0;background:#14203380;display:flex;justify-content:center;align-items:end;z-index:10;padding:14px}.modal{width:min(100%,530px);background:white;border-radius:23px;padding:22px;box-shadow:0 18px 65px #0002}.modal h3{margin:0 0 9px}.modal input{width:100%;padding:13px;border-radius:12px;border:1px solid #dbe2ec;margin:10px 0 14px;outline:none}.modalactions{display:flex;gap:8px}.modalactions button{flex:1;padding:13px}.metricgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}.metric{background:white;border-radius:17px;border:1px solid #e9edf4;padding:16px}.metric .value{font-size:24px;font-weight:800;margin:8px 0 3px}.sectionhead{font-size:15px;font-weight:800;margin:23px 0 12px}.barrow{margin:12px 0}.barrow .track{height:7px;margin-top:8px}.historyrow{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #f0f2f5;font-size:13px}.historyrow:last-child{border:0}.analyticsnote{font-size:12px;line-height:1.8;color:#64748b}.archive{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.danger{background:#fff1f2;color:#be123c}.weekstatus{font-size:12px;color:#718096}.weekend{font-size:11px;color:#7c8795;text-align:center;margin-top:16px}@media(min-width:720px){.app{padding-top:35px}.metricgrid{grid-template-columns:repeat(4,1fr)}}
-</style></head><body><div class="app"><div class="top"><div><span class="eyebrow">PERSONAL GROWTH</span><h1 id="heading">محفظة التطوير</h1><div class="date" id="dateLine"></div></div><button class="iconbutton" id="exportTop" aria-label="نسخة احتياطية" title="نسخة احتياطية">⇩</button></div>
-<section id="home"><div class="hero"><div class="herohead"><span style="font-size:13px;font-weight:700">إنجاز هذا الأسبوع</span><span class="muted" style="font-size:12px" id="weekLabel"></span></div><div class="big" id="heroDone">0 <span style="font-size:15px;font-weight:500">/ 14 س و30 د</span></div><div class="track"><div class="fill" id="mainFill" style="width:0%"></div></div><div class="herofoot"><span id="pct">0% مكتمل</span><span id="remaining">المتبقي 14 س و30 د</span></div></div><div id="rest" class="dayOff hide">☀ الجمعة يوم راحة — لا جلسات مطلوبة اليوم</div><div id="categories"></div><div class="weekend">الجمعة راحة • سجّل اسم ما تعلمته عند إكمال كل جلسة</div></section>
-<section id="analytics" class="hide"><div class="metricgrid"><div class="metric"><div class="eyebrow">متوسط الإنجاز الأسبوعي</div><div class="value" id="average">—</div><div class="sub">من الأسابيع المسجلة</div></div><div class="metric"><div class="eyebrow">إنجاز الأسبوع الحالي</div><div class="value" id="thisPct">0%</div><div class="sub" id="thisHours">0 ساعة</div></div><div class="metric"><div class="eyebrow">إجمالي الوقت المنجز</div><div class="value" id="allTime">0 س</div><div class="sub">عبر جميع الأسابيع</div></div><div class="metric"><div class="eyebrow">الأسابيع المكتملة</div><div class="value" id="perfect">0</div><div class="sub">من إجمالي الأسابيع</div></div></div><div class="panel"><div class="line"><b>الأداء حسب القسم</b><span class="muted" style="font-size:11px">متوسط الالتزام</span></div><div id="sectionStats"></div></div><div class="panel"><div class="line"><b>التاريخ الأسبوعي</b><span class="weekstatus" id="historyCount"></span></div><div id="history"></div></div><div class="panel"><b>قراءة الأداء</b><p class="analyticsnote" id="insight"></p><div class="archive"><button class="action" id="exportData">تصدير نسخة احتياطية</button><button class="action" id="importData">استيراد نسخة</button><input type="file" id="fileInput" accept="application/json" hidden><button class="action danger" id="resetData">حذف البيانات</button></div></div><p class="weekend">البيانات محفوظة على هذا المتصفح فقط — استخدم النسخة الاحتياطية عند تغيير الجهاز</p></section></div>
-<nav class="bottom"><button id="homeTab" class="tab active">▦ &nbsp; المحفظة</button><button id="analyticsTab" class="tab">▤ &nbsp; التحليل</button></nav><div class="backdrop hide" id="overlay"><div class="modal"><h3 id="modalTitle">تسجيل جلسة</h3><div class="sub" id="modalSubtitle">اسم ما تعمل عليه</div><input id="activityName" maxlength="100" placeholder="مثال: محادثة إنجليزية / تقرير Excel"><div class="modalactions"><button class="action" id="cancelModal">إلغاء</button><button class="action primary" id="saveModal">حفظ الجلسة</button></div></div></div>
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f7fb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>محفظة التطوير</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#f5f7fb;color:#19263e;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.3;cursor:default}
+.app{max-width:760px;margin:auto;padding:24px 16px 100px}
+.heading{margin:2px 2px 22px;font-size:26px}
+.card{border-radius:22px;padding:20px;margin-bottom:15px;border:1px solid #e8edf4;box-shadow:0 4px 18px #25314d08}
+.english{background:#fff}.knowledge{background:#f0f5f1}
+.professional{background:#eaf0f9;min-width:calc(100% - 32px);scroll-snap-align:center}
+.hero{background:#1c3155;color:#fff;padding:24px;border-radius:24px;margin-bottom:18px}
+.muted{color:#8290a4;font-size:12px}.hero .muted{color:#c2cde0}
+.big{font-size:34px;font-weight:850;margin:9px 0 16px}
+.line{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.name{font-weight:800;font-size:19px}
+.pill{font-size:12px;border-radius:12px;background:#e8edf4a6;padding:7px 10px;white-space:nowrap}
+.track{height:8px;border-radius:20px;overflow:hidden;background:#d9e1ea;margin:15px 0}
+.fill{height:100%;border-radius:20px;background:#41c3ab;transition:width .2s}
+.controls{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.counter{display:flex;align-items:center;gap:10px}
+.square{width:36px;height:36px;border:1px solid #d9e0ea;border-radius:11px;background:#fff;font-size:20px}
+.action{border:0;border-radius:12px;background:#205dd6;color:white;padding:11px 17px;font-weight:750}
+.action.secondary{background:#e6ecf5;color:#344965}
+.action.ghost{background:#ffffff80;color:#345070;border:1px solid #dae1ec}
+.small{font-size:12px;color:#65758c}
+.entries{display:grid;gap:7px;margin-top:14px}
+.entry{display:flex;gap:10px;align-items:center;border-top:1px solid #d7dfe96b;padding:11px 0 2px}
+.entry-main{flex:1;min-width:0}
+.entry strong{font-size:13px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.entry small{color:#8290a4;font-size:11px}
+.mini{border:1px solid #d8dfeb;background:#fff;border-radius:10px;padding:7px 10px;color:#435674;font-size:12px}
+.note{font-size:12px;color:#6e7d93;background:#ffffff88;border-radius:10px;margin-top:12px;padding:9px 11px;text-align:right;border:0;width:100%}
+.rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;scrollbar-width:none;padding:2px 16px 6px;margin:0 -16px;direction:rtl}
+.rail::-webkit-scrollbar{display:none}
+.rail .card{flex:0 0 calc(100% - 25px);margin-bottom:0}
+.railhint{font-size:12px;color:#71849d;margin:5px 4px 11px}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#ffffffee;backdrop-filter:blur(12px);border-top:1px solid #e3e9f2;display:flex;justify-content:center;padding:11px 16px calc(11px + env(safe-area-inset-bottom));gap:12px;z-index:5}
+.tab{width:min(48%,240px);border:0;background:transparent;border-radius:13px;padding:13px;color:#8290a4;font-weight:750}
+.tab.active{background:#e8efff;color:#2458b5}
+.hide{display:none!important}
+.backdrop{position:fixed;inset:0;background:#1324438c;display:flex;justify-content:center;align-items:end;padding:14px;z-index:10}
+.modal{width:min(100%,550px);background:white;padding:22px;border-radius:22px;max-height:85vh;overflow:auto}
+.modal h3{margin:0 0 13px}
+.modal input,.modal textarea{width:100%;border:1px solid #d7dfec;border-radius:12px;padding:13px;margin:8px 0 15px;outline:none;background:#fafcff}
+.modal textarea{min-height:145px;resize:vertical;line-height:1.7}
+.modalbuttons{display:flex;gap:10px}.modalbuttons button{flex:1}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.stat{background:white;border-radius:17px;padding:17px;border:1px solid #e6ebf2}
+.stat b{font-size:23px;display:block;margin-top:9px}
+.anpanel{background:white;border-radius:18px;padding:17px;margin-bottom:14px}
+.barrow{margin-top:16px}.barrow .track{margin:7px 0}
+.history{padding:12px 0;border-bottom:1px solid #edf0f4}
+.history:last-child{border:0}
+.foot{font-size:12px;color:#8b98aa;text-align:center;margin:18px 0}
+.archive{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+@media(min-width:700px){.rail .card{flex-basis:55%}.stats{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<main class="app">
+<section id="home">
+<h1 class="heading">محفظة التطوير</h1>
+<div class="hero">
+  <div class="line"><b>إنجاز الأسبوع</b><span class="muted" id="weekLabel"></span></div>
+  <div class="big" id="totalText">0 / 14 س 30 د</div>
+  <div class="track" style="background:#ffffff32"><div class="fill" id="totalFill"></div></div>
+  <div class="line"><span class="muted" id="percent">0%</span><span class="muted" id="remain"></span></div>
+</div>
+<div id="englishCard"></div>
+<div id="knowledgeCard"></div>
+<div class="railhint">التطوير المهني — اسحب يمينًا أو يسارًا للتنقل ← →</div>
+<div class="rail" id="professionalCards"></div>
+<div class="foot">الجمعة راحة اختيارية · يمكنك تسجيل أي جلسة فيه</div>
+</section>
+
+<section id="analytics" class="hide">
+<h1 class="heading">تحليل الأداء</h1>
+<div class="stats">
+  <div class="stat"><span class="muted">هذا الأسبوع</span><b id="nowPercent">0%</b></div>
+  <div class="stat"><span class="muted">متوسط الأسابيع السابقة</span><b id="avgPercent">—</b></div>
+  <div class="stat"><span class="muted">كل الساعات</span><b id="allHours">0</b></div>
+  <div class="stat"><span class="muted">أسابيع مكتملة</span><b id="fullWeeks">0</b></div>
+</div>
+<div class="anpanel"><b>متوسط الأقسام — للأسابيع المنتهية</b><div id="sectionStats"></div></div>
+<div class="anpanel"><b>سجل الأسابيع (ميلادي)</b><div id="history"></div></div>
+<div class="anpanel">
+  <b>قراءة سريعة</b>
+  <p class="small" id="insight"></p>
+  <div class="archive">
+    <button class="action secondary" id="export">تصدير البيانات</button>
+    <button class="action secondary" id="import">استيراد</button>
+    <input id="importFile" type="file" accept="application/json" hidden>
+  </div>
+  <p class="small">التخزين على جهازك ومتصفحك فقط. احتفظ بنسخة احتياطية لحماية سجل السنة.</p>
+</div>
+</section>
+</main>
+
+<nav class="nav">
+  <button class="tab active" data-tab="home">المحفظة</button>
+  <button class="tab" data-tab="analytics">التحليل</button>
+</nav>
+
+<div id="overlay" class="backdrop hide">
+  <div class="modal">
+    <h3 id="modalTitle"></h3>
+    <div id="modalContent"></div>
+    <div class="modalbuttons">
+      <button class="action secondary" id="closeModal">إغلاق</button>
+      <button class="action" id="saveModal">حفظ</button>
+    </div>
+  </div>
+</div>
+
 <script>
-'use strict';const defs=[{id:'english',name:'الإنجليزية',total:270,min:6,max:6,color:'#2563eb'},{id:'tools',name:'Excel / Primavera',total:60,min:1,max:2,color:'#16a34a'},{id:'ai',name:'الذكاء الاصطناعي',total:180,min:2,max:4,color:'#0891b2'},{id:'knowledge',name:'المعرفة العامة',total:180,min:2,max:4,color:'#d97706'},{id:'courses',name:'الكورسات التقنية',total:180,min:2,max:4,color:'#8b5cf6'}];const STORAGE='development-wallet-v1';const byId=id=>document.getElementById(id);const sum=a=>a.reduce((x,y)=>x+y,0);const fmt=m=>{m=Math.round(m);return (m>=60?Math.floor(m/60)+' س':'')+(m%60?' '+m%60+' د':'')||'0 د'};const isoLocal=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');function weekStart(date){const d=new Date(date.getFullYear(),date.getMonth(),date.getDate());d.setDate(d.getDate()-((d.getDay()+1)%7));return isoLocal(d)}function emptyWeek(){return {counts:{english:6,tools:1,ai:2,knowledge:3,courses:2},entries:[]}}function load(){try{const x=JSON.parse(localStorage.getItem(STORAGE));if(x&&x.version===1&&typeof x.weeks==='object'&&!Array.isArray(x.weeks))return x}catch(e){}return {version:1,weeks:{}}}let state=load();let key=weekStart(new Date());if(!state.weeks[key])state.weeks[key]=emptyWeek();function save(){localStorage.setItem(STORAGE,JSON.stringify(state))}function week(){return state.weeks[key]}function countFor(d,w){return Math.max(d.min,Math.min(d.max,Number(w.counts[d.id])||d.min))}function sectionEntries(d,w){return w.entries.filter(e=>e.section===d.id)}function sectionDone(d,w){return sum(sectionEntries(d,w).map(e=>e.minutes))}function totalDone(w){return sum(defs.map(d=>sectionDone(d,w)))}function totalBudget(){return sum(defs.map(d=>d.total))}function fullWeek(w){return defs.every(d=>Math.abs(sectionDone(d,w)-d.total)<0.01)}function ensureCurrent(){const k=weekStart(new Date());if(k!==key){key=k;if(!state.weeks[k])state.weeks[k]=emptyWeek();save()}}
-function render(){ensureCurrent();save();const w=week(),all=totalBudget(),done=totalDone(w);byId('weekLabel').textContent='يبدأ '+key;byId('dateLine').textContent=new Date().toLocaleDateString('ar-SA',{weekday:'long',day:'numeric',month:'long',year:'numeric'});byId('heroDone').innerHTML=fmt(done)+' <span style="font-size:15px;font-weight:500">/ '+fmt(all)+'</span>';byId('mainFill').style.width=(done/all*100)+'%';byId('pct').textContent=Math.round(done/all*100)+'% مكتمل';byId('remaining').textContent='المتبقي '+fmt(all-done);byId('rest').classList.toggle('hide',new Date().getDay()!==5);byId('categories').innerHTML=defs.map(d=>{const c=countFor(d,w),entries=sectionEntries(d,w),sp=sectionDone(d,w),unit=d.total/c;return `<div class="panel"><div class="line"><div><div class="labeltitle">${d.name}</div><div class="sub">${fmt(d.total)} أسبوعيًا · ${entries.length} من ${c} جلسات</div></div><span class="pill">${fmt(d.total-sp)} متبقية</span></div><div class="track"><div class="fill" style="width:${sp/d.total*100}%;background:${d.color}"></div></div><div class="controls"><div class="counter"><button class="square" data-dec="${d.id}" ${c<=d.min||entries.length?'disabled':''}>−</button><span class="number">${c}</span><button class="square" data-inc="${d.id}" ${c>=d.max||entries.length?'disabled':''}>+</button><span class="small">× ${fmt(unit)}</span></div><button class="action ${entries.length<c?'primary':''}" data-add="${d.id}" ${entries.length>=c?'disabled':''}>+ جلسة</button></div>${entries.length?`<div class="entries">${entries.map(e=>`<div class="entry"><span style="color:${d.color}">●</span><div class="text"><strong>${escapeHTML(e.title||'جلسة '+d.name)}</strong><small>${new Date(e.at).toLocaleDateString('ar-SA',{month:'short',day:'numeric'})} · ${fmt(e.minutes)}</small></div><button class="remove" data-remove="${e.id}" aria-label="حذف الجلسة">×</button></div>`).join('')}</div>`:''}</div>`}).join('');renderAnalytics()}
-function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}byId('categories').addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;const w=week();if(t.dataset.inc||t.dataset.dec){const id=t.dataset.inc||t.dataset.dec,d=defs.find(x=>x.id===id),old=countFor(d,w);w.counts[id]=Math.max(d.min,Math.min(d.max,old+(t.dataset.inc?1:-1)));render()}else if(t.dataset.add){openModal(t.dataset.add)}else if(t.dataset.remove){if(confirm('حذف هذه الجلسة من السجل؟')){w.entries=w.entries.filter(e=>String(e.id)!==t.dataset.remove);render()}}});let activeSection=null;function openModal(id){if(new Date().getDay()===5){alert('الجمعة راحة كاملة. يمكنك التسجيل في يوم آخر.');return}activeSection=id;const d=defs.find(x=>x.id===id);byId('modalTitle').textContent='إكمال جلسة · '+d.name;byId('modalSubtitle').textContent=fmt(d.total/countFor(d,week()))+' — أضف اسم النشاط (اختياري)';byId('activityName').value='';byId('overlay').classList.remove('hide');byId('activityName').focus()}function closeModal(){byId('overlay').classList.add('hide');activeSection=null}byId('cancelModal').onclick=closeModal;byId('overlay').addEventListener('click',e=>{if(e.target.id==='overlay')closeModal()});byId('saveModal').onclick=()=>{if(!activeSection)return;const d=defs.find(x=>x.id===activeSection),w=week(),c=countFor(d,w);if(sectionEntries(d,w).length>=c){closeModal();return}w.entries.push({id:Date.now()+'-'+Math.random().toString(36).slice(2,6),section:d.id,title:byId('activityName').value.trim()||'جلسة '+d.name,minutes:d.total/c,at:new Date().toISOString()});closeModal();render()};byId('activityName').addEventListener('keydown',e=>{if(e.key==='Enter')byId('saveModal').click()});
-function renderAnalytics(){const entries=Object.entries(state.weeks).sort(([a],[b])=>b.localeCompare(a)),weeks=entries.map(([id,w])=>({id,w})),n=weeks.length,done=weeks.map(({w})=>totalDone(w)),avg=n?sum(done)/n:0,percent=n?Math.round(avg/totalBudget()*100):0;byId('average').textContent=percent+'%';byId('thisPct').textContent=Math.round(totalDone(week())/totalBudget()*100)+'%';byId('thisHours').textContent=fmt(totalDone(week()));byId('allTime').textContent=fmt(sum(done));byId('perfect').textContent=weeks.filter(({w})=>fullWeek(w)).length;byId('historyCount').textContent=n+' أسبوع';byId('sectionStats').innerHTML=defs.map(d=>{const av=n?sum(weeks.map(({w})=>sectionDone(d,w)))/n:0;return `<div class="barrow"><div class="line"><span class="small">${d.name}</span><b style="font-size:12px">${Math.round(av/d.total*100)}%</b></div><div class="track"><div class="fill" style="width:${av/d.total*100}%;background:${d.color}"></div></div></div>`}).join('');byId('history').innerHTML=weeks.map(({id,w})=>{const d=totalDone(w);return `<div class="historyrow"><span>أسبوع ${id}</span><span><b>${fmt(d)}</b> <span class="muted">· ${Math.round(d/totalBudget()*100)}%</span></span></div>`}).join('')||'<p class="analyticsnote">لا يوجد سجل بعد.</p>';const weak=defs.map(d=>({name:d.name,v:n?sum(weeks.map(({w})=>sectionDone(d,w)))/(n*d.total):0})).sort((a,b)=>a.v-b.v)[0];byId('insight').textContent=n===1?'هذه أول فترة مسجلة. ستصبح المتوسطات أوضح بعد عدة أسابيع. أكثر قسم يحتاج انتباهًا حاليًا: '+weak.name+'.':'متوسط التزامك '+percent+'%. القسم الأقل التزامًا: '+weak.name+'. حاول تقديم جلساته مبكرًا في الأسبوع مع المحافظة على يوم الجمعة للراحة.'}
-function showTab(tab){byId('home').classList.toggle('hide',tab!=='home');byId('analytics').classList.toggle('hide',tab!=='analytics');byId('homeTab').classList.toggle('active',tab==='home');byId('analyticsTab').classList.toggle('active',tab==='analytics');byId('heading').textContent=tab==='home'?'محفظة التطوير':'تحليل الأداء';render()}byId('homeTab').onclick=()=>showTab('home');byId('analyticsTab').onclick=()=>showTab('analytics');function exportData(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),a=document.createElement('a'),url=URL.createObjectURL(blob);a.href=url;a.download='weekly-wallet-backup-'+isoLocal(new Date())+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}byId('exportTop').onclick=exportData;byId('exportData').onclick=exportData;byId('importData').onclick=()=>byId('fileInput').click();byId('fileInput').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const x=JSON.parse(await f.text());if(x.version!==1||!x.weeks||typeof x.weeks!=='object'||Array.isArray(x.weeks))throw Error();if(confirm('استبدال البيانات الحالية بالنسخة المستوردة؟')){state=x;key=weekStart(new Date());if(!state.weeks[key])state.weeks[key]=emptyWeek();render()}}catch(e){alert('ملف غير صالح')}e.target.value=''};byId('resetData').onclick=()=>{if(confirm('سيتم حذف جميع البيانات المسجلة من هذا المتصفح. هل أنت متأكد؟')){state={version:1,weeks:{[key]:emptyWeek()}};render()}};render();if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
-</script></body></html>
+'use strict';
+const defs=[
+  {id:'english',name:'الإنجليزية',total:270,min:6,max:6,color:'#2865d6'},
+  {id:'knowledge',name:'المعرفة العامة',total:180,min:2,max:4,color:'#438866'},
+  {id:'tools',name:'Excel / Primavera',total:60,min:1,max:2,color:'#5475ae'},
+  {id:'ai',name:'الذكاء الاصطناعي',total:180,min:2,max:4,color:'#5475ae'},
+  {id:'courses',name:'الكورسات التقنية',total:180,min:2,max:4,color:'#5475ae'}
+];
+const STORAGE='development-wallet-v1';
+const el=id=>document.getElementById(id);
+const sum=a=>a.reduce((x,y)=>x+y,0);
+const format=m=>{
+  m=Math.round(m);
+  return (m>=60?Math.floor(m/60)+' س ':'')+(m%60?m%60+' د':'')||'0 د'
+};
+const safe=t=>String(t??'').replace(/[&<>"']/g,c=>({
+  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+}[c]));
+const localDate=d=>[
+  d.getFullYear(),
+  String(d.getMonth()+1).padStart(2,'0'),
+  String(d.getDate()).padStart(2,'0')
+].join('-');
+function startOfWeek(d){
+  const n=new Date(d.getFullYear(),d.getMonth(),d.getDate());
+  n.setDate(n.getDate()-((n.getDay()+1)%7));
+  return localDate(n)
+}
+const defaultWeek=()=>({
+  counts:{english:6,knowledge:3,tools:1,ai:2,courses:2},
+  entries:[]
+});
+function load(){
+  try{
+    const v=JSON.parse(localStorage.getItem(STORAGE));
+    if(v&&v.version===1&&v.weeks&&typeof v.weeks==='object'&&!Array.isArray(v.weeks)){
+      v.notes??={};
+      return v
+    }
+  }catch{}
+  return {version:1,weeks:{},notes:{}}
+}
+let state=load(),currentKey=startOfWeek(new Date()),modal=null;
+function persist(){localStorage.setItem(STORAGE,JSON.stringify(state))}
+function ensure(){
+  const k=startOfWeek(new Date());
+  if(k!==currentKey)currentKey=k;
+  if(!state.weeks[currentKey])state.weeks[currentKey]=defaultWeek();
+  state.notes??={}
+}
+function week(){return state.weeks[currentKey]}
+function count(d,w){
+  return Math.max(d.min,Math.min(d.max,Number(w.counts?.[d.id])||d.min))
+}
+function entries(d,w){
+  return(w.entries||[]).filter(e=>e.section===d.id)
+}
+function done(d,w){
+  return sum(entries(d,w).map(e=>Number(e.minutes)||0))
+}
+function doneAll(w){return sum(defs.map(d=>done(d,w)))}
+const budget=870;
+
+function card(d,kind){
+  const w=week(),n=count(d,w),e=entries(d,w),spent=done(d,w);
+  const remaining=Math.max(0,d.total-spent);
+  return `<article class="card ${kind}">
+    <div class="line">
+      <div>
+        <div class="name">${d.name}</div>
+        <div class="muted">${format(d.total)} أسبوعيًا · ${e.length} من ${n} جلسات</div>
+      </div>
+      <span class="pill">${format(remaining)} متبقية</span>
+    </div>
+    <div class="track">
+      <div class="fill" style="width:${Math.min(100,spent/d.total*100)}%;background:${d.color}"></div>
+    </div>
+    <div class="controls">
+      <div class="counter">
+        <button class="square" data-dec="${d.id}" ${n<=d.min||e.length?'disabled':''}>−</button>
+        <b>${n}</b>
+        <button class="square" data-inc="${d.id}" ${n>=d.max||e.length?'disabled':''}>+</button>
+        <span class="small">× ${format(d.total/n)}</span>
+      </div>
+      <button class="action" data-add="${d.id}" ${e.length>=n?'disabled':''}>+ جلسة</button>
+    </div>
+    ${e.length?`<div class="entries">${e.map(x=>`
+      <div class="entry">
+        <div class="entry-main">
+          <strong>${safe(x.title||'جلسة '+d.name)}</strong>
+          <small>${safe(String(x.at||'').slice(0,10))} · ${format(x.minutes)}</small>
+        </div>
+        <button class="mini" data-undo="${safe(x.id)}" title="التراجع عن الجلسة">تراجع</button>
+      </div>`).join('')}</div>`:''}
+    <button class="note" data-note="${d.id}">✎ تفاصيل القسم ${state.notes?.[d.id]?'· محفوظة':''}</button>
+  </article>`
+}
+function render(){
+  ensure();
+  persist();
+  const w=week(),total=doneAll(w);
+  el('weekLabel').textContent='أسبوع '+currentKey+' م';
+  el('totalText').textContent=format(total)+' / '+format(budget);
+  el('totalFill').style.width=(total/budget*100)+'%';
+  el('percent').textContent=Math.round(total/budget*100)+'% مكتمل';
+  el('remain').textContent='المتبقي '+format(budget-total);
+  el('englishCard').innerHTML=card(defs[0],'english');
+  el('knowledgeCard').innerHTML=card(defs[1],'knowledge');
+  el('professionalCards').innerHTML=defs.slice(2).map(d=>card(d,'professional')).join('');
+  renderStats()
+}
+function openModal(title,html,onSave){
+  modal=onSave;
+  el('modalTitle').textContent=title;
+  el('modalContent').innerHTML=html;
+  el('overlay').classList.remove('hide');
+  const inp=el('modalContent').querySelector('input,textarea');
+  if(inp)inp.focus()
+}
+function closeModal(){
+  el('overlay').classList.add('hide');
+  modal=null
+}
+el('closeModal').onclick=closeModal;
+el('overlay').onclick=e=>{
+  if(e.target===el('overlay'))closeModal()
+};
+el('saveModal').onclick=()=>{
+  if(modal)modal()
+};
+
+function handleClick(event){
+  const b=event.target.closest('button');
+  if(!b)return;
+  const w=week();
+  const inc=b.dataset.inc,dec=b.dataset.dec,add=b.dataset.add;
+  const undo=b.dataset.undo,note=b.dataset.note;
+
+  if(inc||dec){
+    const d=defs.find(x=>x.id===(inc||dec));
+    w.counts[d.id]=Math.min(d.max,Math.max(d.min,count(d,w)+(inc?1:-1)));
+    render()
+  }
+  if(add){
+    const d=defs.find(x=>x.id===add),n=count(d,w);
+    if(entries(d,w).length>=n)return;
+    openModal('تسجيل جلسة · '+d.name,
+      `<input id="activity" maxlength="120" placeholder="اسم النشاط (اختياري)">`,
+      ()=>{
+        const title=el('activity').value.trim()||'جلسة '+d.name;
+        w.entries.push({
+          id:Date.now()+'-'+Math.random().toString(36).slice(2),
+          section:d.id,title,
+          minutes:d.total/n,
+          at:new Date().toISOString()
+        });
+        closeModal();
+        render()
+      }
+    )
+  }
+  if(undo){
+    if(!confirm('التراجع عن هذه الجلسة؟'))return;
+    w.entries=w.entries.filter(x=>String(x.id)!==undo);
+    render()
+  }
+  if(note){
+    const d=defs.find(x=>x.id===note);
+    openModal('تفاصيل · '+d.name,
+      `<textarea id="noteText" placeholder="اكتب ما تتعلمه أو خطتك لهذا القسم...">${safe(state.notes?.[note]||'')}</textarea>`,
+      ()=>{
+        state.notes[note]=el('noteText').value;
+        persist();
+        closeModal();
+        render()
+      }
+    )
+  }
+}
+['englishCard','knowledgeCard','professionalCards'].forEach(id=>
+  el(id).addEventListener('click',handleClick)
+);
+
+function renderStats(){
+  const all=Object.entries(state.weeks).sort((a,b)=>b[0].localeCompare(a[0]));
+  const past=all.filter(([k])=>k<currentKey);
+  const pct=w=>doneAll(w)/budget*100;
+  el('nowPercent').textContent=Math.round(pct(week()))+'%';
+  el('avgPercent').textContent=past.length
+    ?Math.round(sum(past.map(([,w])=>pct(w)))/past.length)+'%'
+    :'—';
+  el('allHours').textContent=format(sum(all.map(([,w])=>doneAll(w))));
+  el('fullWeeks').textContent=past.filter(([,w])=>doneAll(w)>=budget-0.01).length;
+  el('sectionStats').innerHTML=defs.map(d=>{
+    const avg=past.length
+      ?sum(past.map(([,w])=>done(d,w)/d.total*100))/past.length:0;
+    return `<div class="barrow">
+      <div class="line">
+        <span class="small">${d.name}</span>
+        <b>${past.length?Math.round(avg)+'%':'—'}</b>
+      </div>
+      <div class="track">
+        <div class="fill" style="width:${avg}%;background:${d.color}"></div>
+      </div>
+    </div>`
+  }).join('');
+  el('history').innerHTML=all.map(([k,w])=>
+    `<div class="history line">
+      <span class="small">${k} م ${k===currentKey?'· الحالي':''}</span>
+      <strong>${format(doneAll(w))} · ${Math.round(pct(w))}%</strong>
+    </div>`
+  ).join('')||'<p class="small">لا توجد أسابيع مسجلة</p>';
+
+  if(!past.length){
+    el('insight').textContent='ابدأ بتسجيل الجلسات. يظهر المتوسط بعد انتهاء أول أسبوع.';
+    return
+  }
+  const scores=defs.map(d=>({
+    name:d.name,
+    p:sum(past.map(([,w])=>done(d,w)/d.total*100))/past.length
+  })).sort((a,b)=>b.p-a.p);
+  el('insight').textContent=
+    'الأعلى انتظامًا: '+scores[0].name+' ('+Math.round(scores[0].p)+'%). '+
+    'الأقل انتظامًا: '+scores.at(-1).name+' ('+
+    Math.round(scores.at(-1).p)+'%). '+
+    'تُحسب المتوسطات من الأسابيع المنتهية المسجلة.'
+}
+document.querySelectorAll('[data-tab]').forEach(btn=>btn.onclick=()=>{
+  const tab=btn.dataset.tab;
+  el('home').classList.toggle('hide',tab!=='home');
+  el('analytics').classList.toggle('hide',tab!=='analytics');
+  document.querySelectorAll('[data-tab]').forEach(x=>
+    x.classList.toggle('active',x===btn)
+  );
+  window.scrollTo(0,0);
+  render()
+});
+el('export').onclick=()=>{
+  persist();
+  const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;
+  a.download='development-wallet-backup-'+localDate(new Date())+'.json';
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000)
+};
+el('import').onclick=()=>el('importFile').click();
+el('importFile').onchange=async e=>{
+  const f=e.target.files[0];
+  if(!f)return;
+  try{
+    const s=JSON.parse(await f.text());
+    if(s.version!==1||!s.weeks||typeof s.weeks!=='object'||Array.isArray(s.weeks))throw Error();
+    if(confirm('استبدال البيانات الحالية ببيانات النسخة الاحتياطية؟')){
+      state={...s,notes:s.notes||{}};
+      persist();
+      render()
+    }
+  }catch{
+    alert('ملف النسخة الاحتياطية غير صالح')
+  }
+  e.target.value=''
+};
+document.addEventListener('visibilitychange',()=>{
+  if(!document.hidden)render()
+});
+window.addEventListener('focus',render);
+setInterval(()=>{
+  if(startOfWeek(new Date())!==currentKey)render()
+},60000);
+render();
+if('serviceWorker'in navigator)
+  navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body>
+</html>
