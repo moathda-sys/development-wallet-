@@ -9,269 +9,448 @@
 <title>محفظة التطوير</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
+
 <style>
 :root{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
-  color:#192c42;background:#f3f6fa;
+  color:#192c42;
+  background:#f3f6fa;
   font-synthesis:none;
 }
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#f3f6fa}
+html,body{
+  margin:0;
+  height:100%;
+  background:#f3f6fa;
+}
 body{overflow:hidden}
 button,input,textarea{font:inherit}
 button{cursor:pointer}
-button:disabled{opacity:.4;cursor:default}
+button:disabled{opacity:.45;cursor:default}
 .hide{display:none!important}
+
 .app{
-  width:100%;max-width:790px;height:100dvh;
-  margin:auto;padding:calc(env(safe-area-inset-top) + 9px) 13px
-  calc(env(safe-area-inset-bottom) + 9px);
-  display:flex;flex-direction:column;gap:9px;
+  width:100%;
+  max-width:790px;
+  height:100dvh;
+  margin:auto;
+  padding:calc(env(safe-area-inset-top) + 9px) 13px
+          calc(env(safe-area-inset-bottom) + 9px);
+  display:flex;
+  flex-direction:column;
+  gap:9px;
   overflow:hidden;
 }
+
+/* Header */
 .header{
-  min-height:45px;flex:none;
-  display:flex;align-items:center;
-  justify-content:space-between;gap:8px;
+  min-height:45px;
+  flex:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
 }
 .header h1{
-  margin:0;font-size:clamp(19px,5vw,26px);
-  letter-spacing:-.5px;white-space:nowrap;
+  margin:0;
+  font-size:clamp(19px,5vw,26px);
+  white-space:nowrap;
+  font-weight:850;
 }
 .tabs{
-  display:flex;gap:3px;padding:4px;
-  background:#e5ebf3;border-radius:13px;
+  display:flex;
+  gap:3px;
+  padding:4px;
+  background:#e5ebf3;
+  border-radius:13px;
 }
 .tab{
-  border:0;border-radius:10px;background:transparent;
-  color:#62768e;font-size:12px;font-weight:750;
-  padding:8px 10px;white-space:nowrap;
+  border:0;
+  border-radius:10px;
+  background:transparent;
+  color:#62768e;
+  font-size:12px;
+  font-weight:750;
+  padding:8px 10px;
 }
-.tab.active{background:white;color:#1e578d}
-.view{min-height:0;flex:1}
+.tab.active{
+  background:white;
+  color:#1e578d;
+}
+
+.view{
+  flex:1;
+  min-height:0;
+}
+
+/* Home layout */
 #home{
-  display:grid;
-  grid-template-rows:auto minmax(0,1.65fr) auto minmax(0,3fr);
-  gap:9px;overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  overflow:hidden;
 }
+
+/* KPI */
 .hero{
-  border-radius:18px;background:#213e60;
-  color:white;padding:12px 15px;
-  display:flex;flex-direction:column;
-  justify-content:center;gap:8px;
-  min-height:92px;
+  flex:none;
+  min-height:91px;
+  border-radius:18px;
+  background:#213e60;
+  color:white;
+  padding:12px 15px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:8px;
 }
-.line,.heroTop,.heroBottom{
-  display:flex;align-items:center;
-  justify-content:space-between;gap:8px;
+.heroTop,.heroBottom,.line{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
 }
-.heroTop b{font-size:13px;white-space:nowrap}
+.heroTop b{
+  font-size:13px;
+  white-space:nowrap;
+}
 .heroTop strong{
   font-size:clamp(19px,5.3vw,27px);
-  font-weight:850;white-space:nowrap;
+  font-weight:850;
+  white-space:nowrap;
 }
-.heroBottom small{color:#d8e4f0;font-size:11px}
+.heroBottom small{
+  font-size:11px;
+  color:#d8e4f0;
+}
 .track{
-  height:5px;flex:none;
-  border-radius:20px;background:#dbe3ed;overflow:hidden;
+  height:5px;
+  flex:none;
+  border-radius:20px;
+  background:#dbe3ed;
+  overflow:hidden;
 }
 .hero .track{background:#ffffff35}
 .fill{
-  height:100%;background:#5ed5bb;
-  border-radius:20px;transition:width .2s;
+  height:100%;
+  border-radius:20px;
+  background:#5ed5bb;
+  transition:width .2s;
 }
-.topGrid{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:9px;min-height:0;
+
+/* Five equal cards */
+.cards{
+  flex:1;
+  min-height:0;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(3,minmax(0,1fr));
+  gap:10px;
+  direction:rtl;
 }
-.topGrid>div{min-width:0;min-height:0}
+
 .area{
-  height:100%;min-height:0;min-width:0;
-  border:1px solid #dce5ee;border-radius:17px;
-  padding:10px 12px;display:flex;
-  flex-direction:column;justify-content:space-between;
-  gap:5px;overflow:hidden;
+  min-width:0;
+  min-height:0;
+  height:100%;
+  border:1px solid #dce5ee;
+  border-radius:17px;
+  padding:11px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:5px;
+  overflow:hidden;
   box-shadow:0 3px 12px #24395108;
 }
-.english{background:#fff}
-.knowledge{background:#eaf4f0;border-color:#d8e9e0}
-.pro{background:#e5edf8;border-color:#d5e1f0}
+
+.english{
+  background:#ffffff;
+  border-color:#dce5ee;
+}
+.knowledge{
+  background:#eaf4f0;
+  border-color:#d8e9e0;
+}
+.pro{
+  background:#e5edf8;
+  border-color:#d5e1f0;
+}
+
 .areatop{
-  display:flex;align-items:flex-start;
-  justify-content:space-between;gap:7px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:5px;
   min-width:0;
 }
-.titleGroup{min-width:0;flex:1}
+.titleGroup{
+  min-width:0;
+  flex:1;
+}
 .name{
-  font-size:clamp(12px,3.55vw,16px);
-  font-weight:800;line-height:1.4;
-  white-space:nowrap;overflow:hidden;
-  text-overflow:clip;word-break:normal;
+  font-size:clamp(12px,3.45vw,16px);
+  font-weight:800;
+  line-height:1.4;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:clip;
+  word-break:normal;
   overflow-wrap:normal;
 }
 .meta{
-  color:#718298;font-size:10px;
-  margin-top:3px;white-space:nowrap;
+  color:#718298;
+  font-size:10px;
+  margin-top:3px;
+  white-space:nowrap;
 }
 .balance{
-  font-size:10px;white-space:nowrap;
-  padding:5px 6px;border-radius:9px;
-  background:#f4f7fa;border:1px solid #dfe5ed;
-  color:#53677b;flex:none;
+  font-size:10px;
+  color:#53677b;
+  background:#f4f7fa;
+  border:1px solid #dfe5ed;
+  border-radius:9px;
+  padding:5px 6px;
+  white-space:nowrap;
+  flex:none;
 }
 .knowledge .balance{background:#f6faf7}
 .pro .balance{background:#f4f7fd}
+
 .actions{
-  display:flex;justify-content:center;
-  align-items:center;min-height:34px;width:100%;
-}
-.add{
-  background:#2267be;border:0;border-radius:10px;
-  color:white;font-size:13px;font-weight:750;
-  padding:8px 18px;white-space:nowrap;
-  margin:auto;
-}
-.aux{
-  min-height:21px;display:flex;
-  justify-content:center;align-items:center;
-  gap:8px;
-}
-.detail{
-  background:transparent;border:0;
-  color:#477398;font-size:11px;
-  white-space:nowrap;padding:2px;
-}
-.caption{
-  color:#71849a;font-size:11px;
-  padding:0 3px;
-}
-.professionalList{
-  min-height:0;display:grid;
-  grid-template-rows:repeat(3,minmax(0,1fr));
-  gap:8px;
-}
-.professionalList .area{
-  display:grid;
-  grid-template-rows:auto 5px minmax(30px,1fr) auto;
-  gap:5px;
-}
-.professionalList .actions{
-  align-self:center;
-}
-.professionalList .aux{
+  width:100%;
+  min-height:34px;
+  display:flex;
+  align-items:center;
   justify-content:center;
 }
+.add{
+  display:block;
+  margin:auto;
+  border:0;
+  border-radius:10px;
+  background:#2267be;
+  color:white;
+  font-size:13px;
+  font-weight:750;
+  padding:8px 16px;
+  white-space:nowrap;
+}
+.aux{
+  min-height:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.detail{
+  border:0;
+  background:transparent;
+  color:#477398;
+  font-size:11px;
+  white-space:nowrap;
+  padding:2px;
+}
+
+/* Analytics */
 #analytics{overflow:hidden}
 .analyticsWrap{
-  height:100%;display:flex;
-  flex-direction:column;gap:9px;min-height:0;
+  height:100%;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  gap:9px;
 }
 .metrics{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:8px;flex:none;
+  flex:none;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
 }
 .metric,.panel{
-  background:white;border:1px solid #dfe7f0;
-  border-radius:14px;padding:12px;
+  background:#fff;
+  border:1px solid #dfe7f0;
+  border-radius:14px;
+  padding:12px;
 }
 .metric label{
-  display:block;color:#718298;font-size:11px;
+  display:block;
+  color:#718298;
+  font-size:11px;
 }
 .metric strong{
-  display:block;margin-top:5px;font-size:21px;
+  display:block;
+  margin-top:5px;
+  font-size:21px;
 }
 .panel{
-  flex:1;min-height:0;overflow-y:auto;
+  flex:1;
+  min-height:0;
+  overflow-y:auto;
   overscroll-behavior:contain;
 }
-.panel h2{font-size:14px;margin:2px 0 12px}
+.panel h2{
+  font-size:14px;
+  margin:2px 0 12px;
+}
 .barrow{margin:12px 0}
 .barrow .line{font-size:12px}
 .barrow .track{margin-top:7px}
 .historyrow{
-  display:flex;justify-content:space-between;
-  align-items:center;gap:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
   border-top:1px solid #edf1f5;
-  padding:10px 0;font-size:12px;
+  padding:10px 0;
+  font-size:12px;
 }
-.insight{font-size:12px;color:#65778e;line-height:1.7}
-.archive{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.insight{
+  font-size:12px;
+  color:#65778e;
+  line-height:1.7;
+}
+.archive{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:12px 0;
+}
 .linkBtn{
-  border:1px solid #d5dfec;border-radius:10px;
-  background:#f6f9fd;color:#345778;
-  padding:9px 11px;font-size:12px;
+  border:1px solid #d5dfec;
+  border-radius:10px;
+  background:#f6f9fd;
+  color:#345778;
+  padding:9px 11px;
+  font-size:12px;
 }
+
+/* Modals */
 .backdrop{
-  position:fixed;inset:0;z-index:10;
-  background:#14274199;padding:16px;
-  display:flex;align-items:center;justify-content:center;
+  position:fixed;
+  inset:0;
+  z-index:10;
+  background:#14274199;
+  padding:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .modal{
-  width:min(100%,500px);max-height:82dvh;
-  overflow-y:auto;background:white;
-  border-radius:20px;padding:19px;
+  width:min(100%,500px);
+  max-height:82dvh;
+  overflow-y:auto;
+  background:#fff;
+  border-radius:20px;
+  padding:19px;
   box-shadow:0 16px 60px #152d4d40;
 }
-.modal h2{font-size:18px;margin:0 0 12px}
+.modal h2{
+  font-size:18px;
+  margin:0 0 12px;
+}
 .modal input,.modal textarea{
-  width:100%;border:1px solid #dce4ed;
-  background:#f8fafc;border-radius:11px;
-  padding:12px;outline:none;
+  width:100%;
+  border:1px solid #dce4ed;
+  background:#f8fafc;
+  border-radius:11px;
+  padding:12px;
+  outline:none;
 }
 .modal textarea{
-  height:145px;resize:vertical;line-height:1.7;
+  height:145px;
+  resize:vertical;
+  line-height:1.7;
 }
 .modalLabel{
-  font-size:12px;color:#718298;
+  font-size:12px;
+  color:#718298;
   margin:12px 0 8px;
 }
 .durationGrid{
-  display:flex;flex-wrap:wrap;gap:8px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
 }
 .durationBtn{
-  background:#f7faff;color:#355476;
-  border:1px solid #d8e2ef;border-radius:11px;
-  padding:10px 15px;font-weight:750;
+  background:#f7faff;
+  color:#355476;
+  border:1px solid #d8e2ef;
+  border-radius:11px;
+  padding:10px 15px;
+  font-weight:750;
 }
 .durationBtn.active{
-  background:#2267be;color:white;
+  background:#2267be;
+  color:#fff;
   border-color:#2267be;
 }
-.modalActions{display:flex;gap:8px;margin-top:14px}
+.modalActions{
+  display:flex;
+  gap:8px;
+  margin-top:14px;
+}
 .modalActions button{
-  flex:1;border:0;border-radius:11px;
-  padding:11px 6px;font-size:13px;font-weight:700;
+  flex:1;
+  border:0;
+  border-radius:11px;
+  padding:11px 6px;
+  font-size:13px;
+  font-weight:700;
 }
 .save{background:#2267be;color:white}
 .delete{background:#fff1ed;color:#a34839}
 .close{background:#eaf0f6;color:#3d5873}
+
 .entryrow{
-  border-top:1px solid #e7edf3;padding:9px 0;
-  display:flex;justify-content:space-between;
-  align-items:center;gap:8px;font-size:12px;
+  border-top:1px solid #e7edf3;
+  padding:9px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
 }
 .entryrow button{
-  background:#fff7f4;border:1px solid #e6d5cb;
-  color:#a34839;border-radius:8px;padding:5px 8px;
+  background:#fff7f4;
+  border:1px solid #e6d5cb;
+  color:#a34839;
+  border-radius:8px;
+  padding:5px 8px;
 }
-.muted{color:#8897a7;font-size:12px}
+.muted{
+  color:#8897a7;
+  font-size:12px;
+}
+
+/* iPhone adjustments */
 @media(max-width:390px){
-  .app{padding-left:9px;padding-right:9px;gap:7px}
-  #home{gap:7px}
-  .topGrid,.professionalList{gap:7px}
-  .area{padding:8px 9px}
+  .app{
+    padding-left:9px;
+    padding-right:9px;
+    gap:7px;
+  }
+  #home,.cards{gap:7px}
+  .area{padding:8px}
   .name{font-size:12px}
   .meta,.balance{font-size:9px}
-  .add{font-size:12px;padding:7px 12px}
+  .balance{padding:4px}
+  .add{
+    font-size:12px;
+    padding:7px 12px;
+  }
   .header h1{font-size:19px}
-  .tab{font-size:11px;padding:7px}
+  .tab{
+    font-size:11px;
+    padding:7px;
+  }
 }
 @media(max-height:700px){
-  .hero{min-height:75px;padding:9px 12px}
-  .app{gap:7px}
-  #home{gap:7px}
-  .area{padding:7px 10px}
-  .professionalList{gap:6px}
+  .hero{
+    min-height:75px;
+    padding:9px 12px;
+  }
+  .app,#home,.cards{gap:7px}
+  .area{padding:7px 9px}
   .actions{min-height:28px}
   .add{padding:6px 14px}
 }
@@ -279,11 +458,12 @@ button:disabled{opacity:.4;cursor:default}
   .meta{display:none}
   .area{gap:3px}
   .hero{min-height:68px}
+  .balance{font-size:9px}
 }
 </style>
 </head>
-<body>
 
+<body>
 <div class="app">
 <header class="header">
   <h1>محفظة التطوير</h1>
@@ -307,12 +487,8 @@ button:disabled{opacity:.4;cursor:default}
       <small id="heroRemain">المتبقي 12 س 15 د</small>
     </div>
   </div>
-  <div class="topGrid">
-    <div id="english"></div>
-    <div id="knowledge"></div>
-  </div>
-  <div class="caption">التطوير المهني</div>
-  <div class="professionalList" id="professional"></div>
+
+  <div class="cards" id="cards"></div>
 </section>
 
 <section class="view hide" id="analytics">
@@ -335,19 +511,26 @@ button:disabled{opacity:.4;cursor:default}
         <strong id="fullWeeks">0</strong>
       </div>
     </div>
+
     <div class="panel">
       <h2>الالتزام حسب القسم</h2>
       <div id="sectionStats"></div>
+
       <h2 style="margin-top:20px">السجل الأسبوعي · ميلادي</h2>
       <div id="history"></div>
+
       <h2 style="margin-top:20px">قراءة الأداء</h2>
       <p class="insight" id="insight"></p>
+
       <div class="archive">
         <button class="linkBtn" id="exportBtn">نسخة احتياطية</button>
         <button class="linkBtn" id="importBtn">استيراد</button>
         <input id="importFile" type="file" accept="application/json" hidden>
       </div>
-      <p class="muted">المعلومات محفوظة على هذا المتصفح. احتفظ بنسخة احتياطية دوريًا.</p>
+      <p class="muted">
+        المعلومات محفوظة على هذا المتصفح.
+        احتفظ بنسخة احتياطية دوريًا.
+      </p>
     </div>
   </div>
 </section>
@@ -375,14 +558,19 @@ const KEY='development-wallet-v1';
 const BUDGET=735;
 const $=id=>document.getElementById(id);
 const sum=a=>a.reduce((x,y)=>x+y,0);
+
 const fmt=m=>{
   m=Math.round(m);
   return ((m>=60?Math.floor(m/60)+' س ':'')+
     (m%60?m%60+' د':''))||'0 د';
 };
+
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({
-  '&':'&amp;','<':'&lt;','>':'&gt;',
-  '"':'&quot;',"'":'&#39;'
+  '&':'&amp;',
+  '<':'&lt;',
+  '>':'&gt;',
+  '"':'&quot;',
+  "'":'&#39;'
 }[c]));
 
 function local(d){
@@ -392,19 +580,29 @@ function local(d){
     String(d.getDate()).padStart(2,'0')
   ].join('-');
 }
+
 function weekKey(d){
-  const x=new Date(d.getFullYear(),d.getMonth(),d.getDate());
+  const x=new Date(
+    d.getFullYear(),
+    d.getMonth(),
+    d.getDate()
+  );
   x.setDate(x.getDate()-((x.getDay()+1)%7));
   return local(x);
 }
+
 function newWeek(){
   return {entries:[],target:BUDGET};
 }
+
 function load(){
   try{
     const s=JSON.parse(localStorage.getItem(KEY));
-    if(s&&s.version===1&&s.weeks&&
-       typeof s.weeks==='object'&&!Array.isArray(s.weeks)){
+    if(
+      s&&s.version===1&&s.weeks&&
+      typeof s.weeks==='object'&&
+      !Array.isArray(s.weeks)
+    ){
       return {...s,notes:s.notes||{}};
     }
   }catch(e){}
@@ -418,37 +616,50 @@ let modalMode=null;
 let selected=new Set();
 
 function persist(){
-  try{localStorage.setItem(KEY,JSON.stringify(state))}
-  catch(e){console.warn('تعذر الحفظ',e)}
+  try{
+    localStorage.setItem(KEY,JSON.stringify(state));
+  }catch(e){
+    console.warn('تعذر الحفظ',e);
+  }
 }
+
 function ensure(){
   const k=weekKey(new Date());
   if(k!==current)current=k;
-  if(!state.weeks[current])state.weeks[current]=newWeek();
+  if(!state.weeks[current]){
+    state.weeks[current]=newWeek();
+  }
   state.notes??={};
 }
-function week(){return state.weeks[current]}
+
+function week(){
+  return state.weeks[current];
+}
+
 function entries(d,w){
-  return (w.entries||[]).filter(x=>x.section===d.id);
+  return (w.entries||[]).filter(
+    x=>x.section===d.id
+  );
 }
+
 function spent(d,w){
-  return sum(entries(d,w).map(x=>Number(x.minutes)||0));
+  return sum(entries(d,w).map(
+    x=>Number(x.minutes)||0
+  ));
 }
+
 function total(w){
   return sum(defs.map(d=>spent(d,w)));
 }
+
 function target(w,k){
   if(Number(w.target)>0)return Number(w.target);
   return k===current?BUDGET:870;
-}
-function last(d,w){
-  return entries(d,w).at(-1);
 }
 
 function card(d){
   const used=spent(d,week());
   const remain=Math.max(0,d.total-used);
-  const latest=last(d,week());
 
   return `
   <article class="area ${d.type}">
@@ -457,14 +668,24 @@ function card(d){
         <div class="name">${esc(d.name)}</div>
         <div class="meta">${fmt(d.total)} أسبوعيًا</div>
       </div>
-      <span class="balance">${fmt(remain)} متبقية</span>
+      <span class="balance">
+        ${fmt(remain)} متبقية
+      </span>
     </div>
+
     <div class="track">
-      <div class="fill" style="width:${Math.min(100,used/d.total*100)}%;background:${d.color}"></div>
+      <div class="fill" style="
+        width:${Math.min(100,used/d.total*100)}%;
+        background:${d.color}">
+      </div>
     </div>
+
     <div class="actions">
-      <button class="add" data-session="${d.id}">+ جلسة</button>
+      <button class="add" data-session="${d.id}">
+        + جلسة
+      </button>
     </div>
+
     <div class="aux">
       <button class="detail" data-detail="${d.id}">
         ✎ تفاصيل ${state.notes[d.id]?'· محفوظة':''}
@@ -474,15 +695,25 @@ function card(d){
 }
 
 function render(){
-  ensure();persist();
+  ensure();
+  persist();
+
   const t=total(week());
-  $('heroDone').textContent=fmt(t)+' / '+fmt(BUDGET);
-  $('heroFill').style.width=Math.min(100,t/BUDGET*100)+'%';
-  $('heroPct').textContent=Math.round(t/BUDGET*100)+'% مكتمل';
-  $('heroRemain').textContent='المتبقي '+fmt(Math.max(0,BUDGET-t));
-  $('english').innerHTML=card(defs[0]);
-  $('knowledge').innerHTML=card(defs[1]);
-  $('professional').innerHTML=defs.slice(2).map(card).join('');
+
+  $('heroDone').textContent=
+    fmt(t)+' / '+fmt(BUDGET);
+
+  $('heroFill').style.width=
+    Math.min(100,t/BUDGET*100)+'%';
+
+  $('heroPct').textContent=
+    Math.round(t/BUDGET*100)+'% مكتمل';
+
+  $('heroRemain').textContent=
+    'المتبقي '+fmt(Math.max(0,BUDGET-t));
+
+  $('cards').innerHTML=defs.map(card).join('');
+
   renderStats();
 }
 
@@ -491,49 +722,72 @@ function popup(title,body){
   $('modalBody').innerHTML=body;
   $('overlay').classList.remove('hide');
 }
+
 function closeModal(){
-  modalSection=null;modalMode=null;selected.clear();
+  modalSection=null;
+  modalMode=null;
+  selected.clear();
   $('overlay').classList.add('hide');
 }
+
 $('overlay').onclick=e=>{
   if(e.target===$('overlay'))closeModal();
 };
 
 function history(d){
   const list=entries(d,week()).slice().reverse();
-  if(!list.length)return '<p class="muted">لا توجد جلسات لهذا الأسبوع</p>';
+
+  if(!list.length){
+    return '<p class="muted">لا توجد جلسات لهذا الأسبوع</p>';
+  }
+
   return list.map(x=>`
     <div class="entryrow">
-      <span>${esc(x.title||'جلسة')} · ${fmt(x.minutes)}</span>
+      <span>
+        ${esc(x.title||'جلسة')} · ${fmt(x.minutes)}
+      </span>
       <button data-undo="${esc(x.id)}">تراجع</button>
-    </div>`).join('');
+    </div>
+  `).join('');
 }
 
 function openSession(id){
   const d=defs.find(x=>x.id===id);
   if(!d)return;
-  modalSection=d;modalMode='session';selected=new Set();
+
+  modalSection=d;
+  modalMode='session';
+  selected=new Set();
+
   popup('جلسة · '+d.name,`
     <div class="modalLabel">اختر مدة أو أكثر</div>
+
     <div class="durationGrid">
       ${d.durations.map(n=>`
         <button class="durationBtn" data-duration="${n}">
           ${n===60?'1 ساعة':n+' دقيقة'}
-        </button>`).join('')}
+        </button>
+      `).join('')}
     </div>
+
     <div class="modalLabel">اسم النشاط (اختياري)</div>
-    <input id="activityInput" maxlength="120" placeholder="مثال: مراجعة مهارة أو درس جديد">
+    <input id="activityInput" maxlength="120"
+      placeholder="مثال: مراجعة مهارة أو درس جديد">
+
     <div class="modalLabel">جلسات الأسبوع</div>
     <div id="miniHistory">${history(d)}</div>
+
     <div class="modalActions">
       <button class="save" id="addBtn">إضافة</button>
       <button class="delete" id="deleteBtn">حذف</button>
       <button class="close" id="closeBtn">إغلاق</button>
     </div>
   `);
+
   $('closeBtn').onclick=closeModal;
   $('addBtn').onclick=addSessions;
   $('deleteBtn').onclick=deleteSessions;
+
   document.querySelectorAll('[data-duration]').forEach(b=>{
     b.onclick=()=>{
       const n=Number(b.dataset.duration);
@@ -546,10 +800,14 @@ function openSession(id){
 
 function addSessions(){
   const d=modalSection;
+
   if(!d||!selected.size){
-    alert('اختر مدة واحدة على الأقل');return;
+    alert('اختر مدة واحدة على الأقل');
+    return;
   }
+
   const name=$('activityInput').value.trim();
+
   for(const minutes of selected){
     week().entries.push({
       id:Date.now()+'-'+Math.random().toString(36).slice(2),
@@ -559,16 +817,25 @@ function addSessions(){
       at:new Date().toISOString()
     });
   }
-  persist();closeModal();render();
+
+  persist();
+  closeModal();
+  render();
 }
 
 function deleteSessions(){
   const d=modalSection;
   if(!d)return;
+
   const list=entries(d,week());
-  if(!list.length){alert('لا توجد جلسات للحذف');return}
+
+  if(!list.length){
+    alert('لا توجد جلسات للحذف');
+    return;
+  }
 
   let ids=[];
+
   if(selected.size){
     for(const minutes of selected){
       const match=list.slice().reverse().find(x=>
@@ -577,44 +844,66 @@ function deleteSessions(){
       if(match)ids.push(match.id);
     }
     if(!ids.length){
-      alert('لا توجد جلسات مطابقة للمدد المختارة');return;
+      alert('لا توجد جلسات مطابقة للمدد المختارة');
+      return;
     }
-  }else ids=[list.at(-1).id];
+  }else{
+    ids=[list.at(-1).id];
+  }
 
-  if(!confirm('حذف '+ids.length+' جلسة من هذا القسم؟'))return;
-  week().entries=week().entries.filter(x=>!ids.includes(x.id));
-  persist();closeModal();render();
+  if(!confirm('حذف '+ids.length+' جلسة من هذا القسم؟')){
+    return;
+  }
+
+  week().entries=week().entries.filter(
+    x=>!ids.includes(x.id)
+  );
+
+  persist();
+  closeModal();
+  render();
 }
 
 function openDetails(id){
   const d=defs.find(x=>x.id===id);
   if(!d)return;
-  modalSection=d;modalMode='details';
+
+  modalSection=d;
+  modalMode='details';
+
   popup('تفاصيل · '+d.name,`
-    <textarea id="notesInput" placeholder="ملاحظاتك وخطتك المستمرة...">${esc(state.notes[d.id]||'')}</textarea>
+    <textarea id="notesInput"
+      placeholder="ملاحظاتك وخطتك المستمرة...">${esc(state.notes[d.id]||'')}</textarea>
+
     <div class="modalLabel">سجل جلسات الأسبوع</div>
     <div>${history(d)}</div>
+
     <div class="modalActions">
       <button class="save" id="saveNotes">حفظ</button>
       <button class="close" id="closeBtn">إغلاق</button>
     </div>
   `);
+
   $('closeBtn').onclick=closeModal;
+
   $('saveNotes').onclick=()=>{
     state.notes[d.id]=$('notesInput').value;
-    persist();closeModal();render();
+    persist();
+    closeModal();
+    render();
   };
 }
 
-function cardClick(e){
+$('cards').addEventListener('click',e=>{
   const b=e.target.closest('button');
   if(!b)return;
-  if(b.dataset.session)openSession(b.dataset.session);
-  else if(b.dataset.detail)openDetails(b.dataset.detail);
-}
-['english','knowledge','professional'].forEach(id=>
-  $(id).addEventListener('click',cardClick)
-);
+
+  if(b.dataset.session){
+    openSession(b.dataset.session);
+  }else if(b.dataset.detail){
+    openDetails(b.dataset.detail);
+  }
+});
 
 $('modalBody').addEventListener('click',e=>{
   const b=e.target.closest('[data-undo]');
@@ -628,8 +917,14 @@ $('modalBody').addEventListener('click',e=>{
   if(mode==='details'&&d){
     state.notes[d.id]=$('notesInput').value;
   }
-  week().entries=week().entries.filter(x=>String(x.id)!==id);
-  persist();render();
+
+  week().entries=week().entries.filter(
+    x=>String(x.id)!==id
+  );
+
+  persist();
+  render();
+
   if(d){
     if(mode==='details')openDetails(d.id);
     else openSession(d.id);
@@ -639,20 +934,35 @@ $('modalBody').addEventListener('click',e=>{
 function renderStats(){
   const all=Object.entries(state.weeks)
     .sort((a,b)=>b[0].localeCompare(a[0]));
-  const past=all.filter(([k])=>k<current);
-  const percent=(k,w)=>total(w)/target(w,k)*100;
 
-  $('nowPct').textContent=Math.round(total(week())/BUDGET*100)+'%';
-  $('avgPct').textContent=past.length?
-    Math.round(sum(past.map(([k,w])=>percent(k,w)))/past.length)+'%':'—';
-  $('allTime').textContent=fmt(sum(all.map(([,w])=>total(w))));
-  $('fullWeeks').textContent=past.filter(([k,w])=>
-    total(w)>=target(w,k)
+  const past=all.filter(([k])=>k<current);
+
+  const percent=(k,w)=>
+    total(w)/target(w,k)*100;
+
+  $('nowPct').textContent=
+    Math.round(total(week())/BUDGET*100)+'%';
+
+  $('avgPct').textContent=past.length
+    ?Math.round(
+      sum(past.map(([k,w])=>percent(k,w)))/past.length
+    )+'%'
+    :'—';
+
+  $('allTime').textContent=
+    fmt(sum(all.map(([,w])=>total(w))));
+
+  $('fullWeeks').textContent=past.filter(
+    ([k,w])=>total(w)>=target(w,k)
   ).length;
 
   $('sectionStats').innerHTML=defs.map(d=>{
-    const p=past.length?
-      sum(past.map(([,w])=>spent(d,w)/d.total*100))/past.length:0;
+    const p=past.length
+      ?sum(past.map(([,w])=>
+        spent(d,w)/d.total*100
+      ))/past.length
+      :0;
+
     return `
       <div class="barrow">
         <div class="line">
@@ -660,24 +970,35 @@ function renderStats(){
           <b>${past.length?Math.round(p)+'%':'—'}</b>
         </div>
         <div class="track">
-          <div class="fill" style="background:${d.color};width:${Math.min(100,p)}%"></div>
+          <div class="fill" style="
+            background:${d.color};
+            width:${Math.min(100,p)}%">
+          </div>
         </div>
-      </div>`;
+      </div>
+    `;
   }).join('');
 
   $('history').innerHTML=all.map(([k,w])=>`
     <div class="historyrow">
       <span>${k} ${k===current?'· الحالي':''}</span>
-      <b>${fmt(total(w))} · ${Math.round(percent(k,w))}%</b>
-    </div>`).join('');
+      <b>
+        ${fmt(total(w))} · ${Math.round(percent(k,w))}%
+      </b>
+    </div>
+  `).join('');
 
   if(!past.length){
-    $('insight').textContent='يظهر تحليل الأداء بعد انتهاء أول أسبوع.';
+    $('insight').textContent=
+      'يظهر تحليل الأداء بعد انتهاء أول أسبوع.';
     return;
   }
+
   const ranking=defs.map(d=>({
     name:d.name,
-    score:sum(past.map(([,w])=>spent(d,w)/d.total*100))/past.length
+    score:sum(past.map(([,w])=>
+      spent(d,w)/d.total*100
+    ))/past.length
   })).sort((a,b)=>b.score-a.score);
 
   $('insight').textContent=
@@ -690,58 +1011,86 @@ function renderStats(){
 document.querySelectorAll('[data-tab]').forEach(b=>{
   b.onclick=()=>{
     const tab=b.dataset.tab;
-    $('home').classList.toggle('hide',tab!=='home');
-    $('analytics').classList.toggle('hide',tab!=='analytics');
+
+    $('home').classList.toggle(
+      'hide',tab!=='home'
+    );
+
+    $('analytics').classList.toggle(
+      'hide',tab!=='analytics'
+    );
+
     document.querySelectorAll('[data-tab]').forEach(x=>
       x.classList.toggle('active',x===b)
     );
+
     render();
   };
 });
 
 $('exportBtn').onclick=()=>{
   persist();
+
   const blob=new Blob(
     [JSON.stringify(state,null,2)],
     {type:'application/json'}
   );
+
   const u=URL.createObjectURL(blob);
   const a=document.createElement('a');
+
   a.href=u;
   a.download='development-wallet-'+local(new Date())+'.json';
   a.click();
+
   setTimeout(()=>URL.revokeObjectURL(u),1000);
 };
 
-$('importBtn').onclick=()=>$('importFile').click();
+$('importBtn').onclick=()=>
+  $('importFile').click();
+
 $('importFile').onchange=async e=>{
   const file=e.target.files[0];
   if(!file)return;
+
   try{
     const s=JSON.parse(await file.text());
-    if(s.version!==1||!s.weeks||
-      typeof s.weeks!=='object'||Array.isArray(s.weeks)){
+
+    if(
+      s.version!==1||
+      !s.weeks||
+      typeof s.weeks!=='object'||
+      Array.isArray(s.weeks)
+    ){
       throw Error();
     }
+
     if(confirm('استبدال البيانات الحالية بالنسخة الاحتياطية؟')){
       state={...s,notes:s.notes||{}};
-      persist();render();
+      persist();
+      render();
     }
   }catch(e){
     alert('النسخة الاحتياطية غير صالحة');
   }
+
   e.target.value='';
 };
 
 document.addEventListener('visibilitychange',()=>{
   if(!document.hidden)render();
 });
+
 window.addEventListener('focus',render);
+
 setInterval(()=>{
-  if(weekKey(new Date())!==current)render();
+  if(weekKey(new Date())!==current){
+    render();
+  }
 },60000);
 
 render();
+
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('./sw.js').catch(()=>{});
 }
