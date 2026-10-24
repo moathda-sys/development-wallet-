@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
@@ -10,7 +9,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <style>
-:root {
+:root{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
   color:#192c42;
   background:#f3f6fa;
@@ -20,27 +19,27 @@
 body{margin:0}
 button,input,textarea{font:inherit}
 button{cursor:pointer}
-button:disabled{opacity:.28;cursor:default}
-.hide{display:none!important}
 button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
+.hide{display:none!important}
+
 .app{
   max-width:790px;
-  height:100dvh;
-  min-height:0;
+  min-height:100dvh;
   margin:auto;
   display:flex;
   flex-direction:column;
   padding:calc(env(safe-area-inset-top) + 12px) 16px calc(env(safe-area-inset-bottom) + 12px);
   gap:12px;
 }
+
 .header{
-  flex:none;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:10px;
   min-height:48px;
 }
+
 .header h1{
   font-size:clamp(21px,5vw,27px);
   margin:0;
@@ -48,6 +47,7 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   letter-spacing:-.6px;
   white-space:nowrap;
 }
+
 .tabs{
   display:flex;
   gap:4px;
@@ -55,6 +55,7 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   border-radius:13px;
   padding:4px;
 }
+
 .tab{
   border:0;
   border-radius:10px;
@@ -64,21 +65,20 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   padding:9px 12px;
   font-weight:750;
 }
+
 .tab.active{
   background:#fff;
   color:#1f5388;
   box-shadow:0 2px 7px #273b5610;
 }
+
 .view{
-  min-height:0;
-  flex:1;
   display:flex;
   flex-direction:column;
-  gap:11px;
+  gap:12px;
 }
+
 .hero{
-  flex:none;
-  min-height:93px;
   border-radius:19px;
   background:#213e60;
   color:#f9fbff;
@@ -88,76 +88,92 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   justify-content:center;
   gap:10px;
 }
+
 .heroTop,.line{
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:8px;
 }
+
 .heroTop b{font-size:14px}
+
 .hero strong{
   font-size:clamp(21px,5.5vw,29px);
   font-weight:850;
   font-variant-numeric:tabular-nums;
 }
+
 .hero .muted{font-size:12px;color:#cbd9e8}
+
 .track{
   height:5px;
   border-radius:20px;
   background:#dbe3ed;
   overflow:hidden;
 }
+
 .hero .track{background:#ffffff36}
+
 .fill{
   height:100%;
   background:#5ed5bb;
   border-radius:20px;
   transition:width .25s;
 }
+
 .heroBottom{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:8px;
 }
+
 .heroBottom small{font-size:11px;color:#d8e4f0}
+
+.topGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
 .area{
-  flex:none;
-  min-height:0;
   border:1px solid #dde5ed;
   border-radius:18px;
   padding:14px 15px;
   box-shadow:0 4px 14px #24395109;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
-  gap:8px;
+  gap:10px;
+  min-height:165px;
 }
+
 .english{background:#fff}
 .knowledge{background:#eaf4f0;border-color:#d9e9e0}
 .pro{
   background:#e5edf8;
   border-color:#d5e1f0;
-  scroll-snap-align:center;
-  flex:0 0 92%;
-  height:100%;
 }
+
 .areatop{
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
   gap:8px;
 }
+
 .name{
   font-size:clamp(17px,4.2vw,20px);
   font-weight:800;
   line-height:1.3;
 }
+
 .meta{
   font-size:12px;
   color:#718298;
   margin-top:3px;
 }
+
 .balance{
   font-size:11px;
   border:1px solid #dfe5ed;
@@ -167,51 +183,47 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   white-space:nowrap;
   color:#53677b;
 }
+
 .knowledge .balance{background:#f6faf7}
 .pro .balance{background:#f4f7fd}
+
 .actions{
   display:flex;
+  align-items:center;
   justify-content:space-between;
-  align-items:center;
-  gap:6px;
+  gap:10px;
 }
-.stepper{
-  display:flex;
-  align-items:center;
-  gap:7px;
-}
-.stepper button{
-  background:#ffffffbb;
-  border:1px solid #d9e3ed;
-  border-radius:9px;
-  width:31px;
-  height:31px;
-  color:#34516e;
-  font-size:19px;
-}
-.stepper b{min-width:15px;text-align:center}
-.duration{
-  font-size:12px;
-  color:#718298;
-  white-space:nowrap;
-}
+
 .add{
   background:#2267be;
   color:white;
   border:0;
   border-radius:11px;
-  padding:9px 15px;
+  padding:10px 15px;
   font-weight:750;
   font-size:13px;
   white-space:nowrap;
 }
+
+.activity{
+  flex:1;
+  min-width:0;
+  text-align:left;
+  color:#6b8094;
+  font-size:12px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
 .aux{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:6px;
+  gap:8px;
   min-height:24px;
 }
+
 .detail{
   border:0;
   background:transparent;
@@ -220,6 +232,7 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   font-size:12px;
   text-align:right;
 }
+
 .undo{
   background:#fff9ed;
   border:1px solid #f0dfbc;
@@ -228,71 +241,45 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   padding:5px 10px;
   font-size:11px;
 }
-.activity{
-  max-width:57%;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  color:#668093;
-  font-size:11px;
-}
-.fixedCard{flex:0 0 auto;min-height:155px}
-.professionalWrap{
-  min-height:0;
-  flex:1;
+
+.professionalList{
   display:flex;
   flex-direction:column;
-  gap:7px;
+  gap:12px;
 }
+
 .sectionCaption{
   font-size:12px;
   color:#72849a;
   padding-right:3px;
-  flex:none;
 }
-.rail{
-  direction:rtl;
-  display:flex;
-  gap:10px;
-  min-height:0;
-  flex:1;
-  overflow-x:auto;
-  overflow-y:hidden;
-  scroll-snap-type:x mandatory;
-  scrollbar-width:none;
-  padding-bottom:2px;
-}
-.rail::-webkit-scrollbar{display:none}
-.dots{
-  text-align:center;
-  color:#8c9eb2;
-  font-size:11px;
-  flex:none;
-}
+
 .analyticsGrid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:9px;
-  flex:none;
 }
+
 .metric{
   background:#fff;
   border:1px solid #dfe7f0;
   border-radius:14px;
   padding:12px;
 }
+
 .metric label{
   font-size:11px;
   color:#708197;
   display:block;
 }
+
 .metric strong{
   font-size:21px;
   display:block;
   margin-top:6px;
 }
+
 .analyticsPanel{
-  min-height:0;
   background:white;
   border:1px solid #dfe7f0;
   border-radius:16px;
@@ -300,10 +287,16 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   overflow:auto;
   flex:1;
 }
-.analyticsPanel h2{font-size:14px;margin:0 0 12px}
+
+.analyticsPanel h2{
+  font-size:14px;
+  margin:0 0 12px;
+}
+
 .barrow{margin:12px 0}
 .barrow .line{font-size:12px}
 .barrow .track{margin-top:6px}
+
 .historyrow{
   display:flex;
   align-items:center;
@@ -312,11 +305,13 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   padding:9px 0;
   font-size:12px;
 }
+
 .insight{
   font-size:12px;
   color:#65778e;
   line-height:1.7;
 }
+
 .linkBtn{
   border:1px solid #d5dfec;
   background:#f6f9fd;
@@ -325,6 +320,14 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   padding:9px 11px;
   font-size:12px;
 }
+
+.archive{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+
 .backdrop{
   position:fixed;
   inset:0;
@@ -335,6 +338,7 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   justify-content:center;
   padding:18px;
 }
+
 .modal{
   background:white;
   border-radius:20px;
@@ -344,25 +348,58 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   overflow-y:auto;
   box-shadow:0 18px 70px #152d4d50;
 }
-.modal h2{font-size:18px;margin:0 0 12px}
-.modal textarea,.modal input{
+
+.modal h2{
+  font-size:18px;
+  margin:0 0 12px;
+}
+
+.modal textarea{
   width:100%;
   background:#f8fafc;
   border:1px solid #dce4ed;
   border-radius:12px;
   padding:12px;
   outline:none;
-}
-.modal textarea{
   height:160px;
   resize:vertical;
   line-height:1.8;
 }
+
+.modalLabel{
+  font-size:12px;
+  color:#718298;
+  margin:12px 0 8px;
+}
+
+.durationGrid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.durationBtn{
+  border:1px solid #d8e2ef;
+  background:#f7faff;
+  color:#355476;
+  border-radius:11px;
+  padding:11px 15px;
+  min-width:86px;
+  font-weight:750;
+}
+
+.durationBtn.active{
+  background:#2267be;
+  color:#fff;
+  border-color:#2267be;
+}
+
 .modalActions{
   display:flex;
   gap:8px;
-  margin-top:12px;
+  margin-top:14px;
 }
+
 .modalActions button{
   flex:1;
   padding:11px 12px;
@@ -370,8 +407,11 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   border:0;
   font-weight:700;
 }
+
 .save{background:#2267be;color:white}
+.delete{background:#fff7f4;color:#a34839;border:1px solid #edd3cb}
 .close{background:#eaf0f6;color:#3d5873}
+
 .entryrow{
   padding:10px 0;
   border-top:1px solid #e7edf3;
@@ -381,6 +421,7 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   gap:8px;
   font-size:12px;
 }
+
 .entryrow button{
   border:1px solid #e6d5cb;
   color:#a34839;
@@ -388,40 +429,43 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   padding:5px 8px;
   background:#fff7f4;
 }
-.modalLabel{
+
+.mutedText{
+  color:#8897a7;
   font-size:12px;
-  color:#718298;
-  margin:12px 0 6px;
 }
-.archive{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:12px;
-}
-@media(max-height:750px){
-  .app{
-    gap:8px;
-    padding-top:calc(env(safe-area-inset-top) + 7px);
-    padding-bottom:calc(env(safe-area-inset-bottom) + 7px);
+
+@media(max-width:640px){
+  .topGrid{
+    grid-template-columns:1fr 1fr;
   }
-  .header{min-height:42px}
-  .hero{min-height:81px;padding:10px 15px;gap:7px}
-  .fixedCard{min-height:135px}
-  .area{padding:10px 12px;gap:5px}
-  .sectionCaption{font-size:11px}
-  .add{padding:8px 11px}
-  .name{font-size:17px}
 }
-@media(max-height:610px){
-  .fixedCard{min-height:118px}
-  .hero{min-height:73px}
-  .area .track{display:none}
-  .pro{min-height:120px}
-  .professionalWrap{overflow:hidden}
+
+@media(max-width:520px){
+  .header{
+    flex-direction:row;
+    align-items:center;
+  }
+  .topGrid{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .area{
+    min-height:155px;
+    padding:12px;
+  }
 }
-@media(min-width:700px){
-  .pro{flex-basis:49%}
+
+@media(max-width:430px){
+  .topGrid{
+    grid-template-columns:1fr 1fr;
+  }
+  .name{
+    font-size:18px;
+  }
+  .add{
+    padding:9px 13px;
+  }
 }
 </style>
 </head>
@@ -439,28 +483,24 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
     <div class="hero">
       <div class="heroTop">
         <b>إنجاز الأسبوع</b>
-        <strong id="heroDone">0 / 14 س 30 د</strong>
+        <strong id="heroDone">0 / 12 س 15 د</strong>
       </div>
       <div class="track">
         <div class="fill" id="heroFill" style="width:0"></div>
       </div>
       <div class="heroBottom">
         <small id="heroPct">0% مكتمل</small>
-        <small id="heroRemain">المتبقي 14 س 30 د</small>
+        <small id="heroRemain">المتبقي 12 س 15 د</small>
       </div>
     </div>
 
-    <div id="english"></div>
-    <div id="knowledge"></div>
-
-    <div class="professionalWrap">
-      <div class="sectionCaption">
-        التطوير المهني
-        <span style="opacity:.65">· مرّر بين الأقسام ← →</span>
-      </div>
-      <div class="rail" id="professional"></div>
-      <div class="dots">● &nbsp;●&nbsp; ●</div>
+    <div class="topGrid">
+      <div id="english"></div>
+      <div id="knowledge"></div>
     </div>
+
+    <div class="sectionCaption">التطوير المهني</div>
+    <div class="professionalList" id="professional"></div>
   </section>
 
   <section class="view hide" id="analytics">
@@ -486,10 +526,13 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
     <div class="analyticsPanel">
       <h2>الالتزام حسب القسم</h2>
       <div id="sectionStats"></div>
+
       <h2 style="margin-top:20px">السجل الأسبوعي · ميلادي</h2>
       <div id="history"></div>
+
       <h2 style="margin-top:20px">قراءة الأداء</h2>
       <p class="insight" id="insight"></p>
+
       <div class="archive">
         <button class="linkBtn" id="exportBtn">نسخة احتياطية</button>
         <button class="linkBtn" id="importBtn">استيراد</button>
@@ -503,36 +546,31 @@ button:focus-visible{outline:3px solid #65a6e9;outline-offset:2px}
   <div class="modal">
     <h2 id="modalTitle"></h2>
     <div id="modalBody"></div>
-    <div class="modalActions">
-      <button class="close" id="closeModal">إغلاق</button>
-      <button class="save" id="saveModal">حفظ</button>
-    </div>
   </div>
 </div>
 
 <script>
 'use strict';
 
-const defs=[
-  {id:'english',name:'الإنجليزية',total:270,min:6,max:6,color:'#2865d6'},
-  {id:'knowledge',name:'المعرفة العامة',total:180,min:2,max:4,color:'#438866'},
-  {id:'tools',name:'Excel / Primavera',total:60,min:1,max:2,color:'#5475ae'},
-  {id:'ai',name:'الذكاء الاصطناعي',total:180,min:2,max:4,color:'#5475ae'},
-  {id:'courses',name:'الكورسات التقنية',total:180,min:2,max:4,color:'#5475ae'}
+const defs = [
+  {id:'english',name:'الإنجليزية',total:225,color:'#2865d6',type:'english',durations:[45]},
+  {id:'knowledge',name:'المعرفة العامة',total:150,color:'#438866',type:'knowledge',durations:[30,45,60]},
+  {id:'tools',name:'Excel / Primavera',total:60,color:'#5475ae',type:'pro',durations:[30,45,60]},
+  {id:'ai',name:'الذكاء الاصطناعي',total:150,color:'#5475ae',type:'pro',durations:[30,45,60]},
+  {id:'courses',name:'الكورسات التقنية',total:150,color:'#5475ae',type:'pro',durations:[30,45,60]}
 ];
 
-const KEY='development-wallet-v1';
-const BUDGET=870;
-const $=id=>document.getElementById(id);
-const sum=a=>a.reduce((x,y)=>x+y,0);
+const KEY = 'development-wallet-v1';
+const BUDGET = 735; // 12h 15m
+const $ = id => document.getElementById(id);
+const sum = a => a.reduce((x,y)=>x+y,0);
 
-const fmt=m=>{
-  m=Math.round(m);
-  return (m>=60?Math.floor(m/60)+' س ':'')+
-    (m%60?m%60+' د':'')||'0 د';
+const fmt = m => {
+  m = Math.round(m);
+  return (m>=60 ? Math.floor(m/60)+' س ' : '') + (m%60 ? m%60+' د' : '') || '0 د';
 };
 
-const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({
+const esc = v => String(v ?? '').replace(/[&<>"']/g,c=>({
   '&':'&amp;',
   '<':'&lt;',
   '>':'&gt;',
@@ -549,366 +587,420 @@ function local(d){
 }
 
 function weekKey(d){
-  let x=new Date(d.getFullYear(),d.getMonth(),d.getDate());
-  x.setDate(x.getDate()-((x.getDay()+1)%7));
+  const x = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  x.setDate(x.getDate() - ((x.getDay()+1)%7)); // week starts Saturday
   return local(x);
 }
 
 function freshWeek(){
   return {
-    counts:{english:6,knowledge:3,tools:1,ai:2,courses:2},
     entries:[]
   };
 }
 
 function read(){
   try{
-    const s=JSON.parse(localStorage.getItem(KEY));
-    if(s&&s.version===1&&s.weeks&&typeof s.weeks==='object'&&!Array.isArray(s.weeks)){
-      return {...s,notes:s.notes||{}};
+    const s = JSON.parse(localStorage.getItem(KEY));
+    if(s && s.version===1 && s.weeks && typeof s.weeks==='object' && !Array.isArray(s.weeks)){
+      return {...s, notes:s.notes || {}};
     }
   }catch(e){}
-  return {version:1,weeks:{},notes:{}};
+  return {version:1, weeks:{}, notes:{}};
 }
 
-let state=read();
-let current=weekKey(new Date());
-let modalSave=null;
+let state = read();
+let current = weekKey(new Date());
+let currentModalSection = null;
+let selectedDurations = [];
 
 function persist(){
   try{
-    localStorage.setItem(KEY,JSON.stringify(state));
+    localStorage.setItem(KEY, JSON.stringify(state));
   }catch(e){
-    console.warn('Save failed',e);
+    console.warn('save failed', e);
   }
 }
 
 function ensure(){
-  const k=weekKey(new Date());
-  if(k!==current)current=k;
-  if(!state.weeks[current])state.weeks[current]=freshWeek();
-  state.notes??={};
+  const k = weekKey(new Date());
+  if(k !== current) current = k;
+  if(!state.weeks[current]) state.weeks[current] = freshWeek();
+  state.notes ??= {};
 }
 
-function wk(){return state.weeks[current]}
+function wk(){ return state.weeks[current]; }
 
-function nSessions(d,w){
-  return Math.max(
-    d.min,
-    Math.min(d.max,Number(w.counts?.[d.id])||d.min)
-  );
-}
-
-function es(d,w){
-  return (w.entries||[]).filter(x=>x.section===d.id);
+function entriesFor(d,w){
+  return (w.entries || []).filter(x=>x.section===d.id);
 }
 
 function spent(d,w){
-  return sum(es(d,w).map(x=>Number(x.minutes)||0));
+  return sum(entriesFor(d,w).map(x=>Number(x.minutes)||0));
 }
 
 function total(w){
   return sum(defs.map(d=>spent(d,w)));
 }
 
-function last(d,w){
-  return es(d,w).at(-1);
+function lastEntry(d,w){
+  return entriesFor(d,w).at(-1);
 }
 
-function makeCard(d,type){
-  const w=wk();
-  const n=nSessions(d,w);
-  const all=es(d,w);
-  const used=spent(d,w);
-  const latest=last(d,w);
+function countText(d,w){
+  const count = entriesFor(d,w).length;
+  return count ? count+' جلسة' : 'لا توجد جلسات';
+}
+
+function makeCard(d, extraClass=''){
+  const w = wk();
+  const used = spent(d,w);
+  const latest = lastEntry(d,w);
 
   return `
-    <article class="area ${type}">
+    <article class="area ${d.type} ${extraClass}">
       <div class="areatop">
         <div>
           <div class="name">${d.name}</div>
-          <div class="meta">${fmt(d.total)} أسبوعيًا · ${all.length} من ${n} جلسات</div>
+          <div class="meta">${fmt(d.total)} أسبوعيًا</div>
         </div>
         <span class="balance">${fmt(Math.max(0,d.total-used))} متبقية</span>
       </div>
 
       <div class="track">
-        <div class="fill" style="width:${Math.min(100,used/d.total*100)}%;background:${d.color}"></div>
+        <div class="fill" style="width:${Math.min(100,(used/d.total)*100)}%;background:${d.color}"></div>
       </div>
 
       <div class="actions">
-        <div class="stepper">
-          <button data-dec="${d.id}" ${n<=d.min||all.length?'disabled':''} aria-label="تقليل الجلسات">−</button>
-          <b>${n}</b>
-          <button data-inc="${d.id}" ${n>=d.max||all.length?'disabled':''} aria-label="زيادة الجلسات">+</button>
-          <span class="duration">× ${fmt(d.total/n)}</span>
-        </div>
-        <button class="add" data-add="${d.id}" ${all.length>=n?'disabled':''}>+ جلسة</button>
+        <button class="add" data-session="${d.id}">جلسة +</button>
+        <span class="activity">${latest ? esc(latest.title || fmt(latest.minutes)) : ''}</span>
       </div>
 
       <div class="aux">
         <button class="detail" data-detail="${d.id}">
-          ✎ تفاصيل ${state.notes?.[d.id]?'· محفوظة':''}
+          ✎ تفاصيل ${state.notes?.[d.id] ? '· محفوظة' : ''}
         </button>
-        <span class="activity">${latest?esc(latest.title||'جلسة '+d.name):''}</span>
-        ${latest?`
-          <button class="undo" data-undo="${esc(latest.id)}" aria-label="التراجع عن آخر جلسة">↶ تراجع</button>
-        `:''}
+        ${latest ? `<button class="undo" data-undo="${esc(latest.id)}">↶ تراجع</button>` : '<span></span>'}
       </div>
-    </article>`;
+    </article>
+  `;
 }
 
 function render(){
   ensure();
   persist();
 
-  const t=total(wk());
+  const t = total(wk());
 
-  $('heroDone').textContent=fmt(t)+' / '+fmt(BUDGET);
-  $('heroFill').style.width=Math.min(100,t/BUDGET*100)+'%';
-  $('heroPct').textContent=Math.round(t/BUDGET*100)+'% مكتمل';
-  $('heroRemain').textContent='المتبقي '+fmt(Math.max(0,BUDGET-t));
+  $('heroDone').textContent = fmt(t)+' / '+fmt(BUDGET);
+  $('heroFill').style.width = Math.min(100,(t/BUDGET)*100)+'%';
+  $('heroPct').textContent = Math.round((t/BUDGET)*100)+'% مكتمل';
+  $('heroRemain').textContent = 'المتبقي '+fmt(Math.max(0,BUDGET-t));
 
-  $('english').innerHTML=makeCard(defs[0],'english fixedCard');
-  $('knowledge').innerHTML=makeCard(defs[1],'knowledge fixedCard');
-
-  const rail=$('professional');
-  const before=rail.scrollLeft;
-  rail.innerHTML=defs.slice(2).map(d=>makeCard(d,'pro')).join('');
-  rail.scrollLeft=before;
+  $('english').innerHTML = makeCard(defs[0]);
+  $('knowledge').innerHTML = makeCard(defs[1]);
+  $('professional').innerHTML = defs.slice(2).map(d=>makeCard(d)).join('');
 
   renderStats();
 }
 
-function popup(title,content,onSave){
-  modalSave=onSave;
-  $('modalTitle').textContent=title;
-  $('modalBody').innerHTML=content;
+function openSessionModal(sectionId){
+  const d = defs.find(x=>x.id===sectionId);
+  currentModalSection = d;
+  selectedDurations = [];
+
+  $('modalTitle').textContent = 'جلسة · ' + d.name;
+
+  $('modalBody').innerHTML = `
+    <div class="modalLabel">اختر المدة — يمكنك اختيار أكثر من مدة</div>
+    <div class="durationGrid">
+      ${d.durations.map(min=>`
+        <button class="durationBtn" data-duration="${min}">
+          ${min===60 ? '1 س' : min+' د'}
+        </button>
+      `).join('')}
+    </div>
+
+    <div class="modalLabel">آخر جلسات هذا الأسبوع</div>
+    <div id="miniHistory">
+      ${renderMiniHistory(d)}
+    </div>
+
+    <div class="modalActions">
+      <button class="save" id="addDurationsBtn">إضافة</button>
+      <button class="delete" id="deleteDurationsBtn">حذف</button>
+      <button class="close" id="closeModalBtn">إغلاق</button>
+    </div>
+  `;
+
   $('overlay').classList.remove('hide');
-  $('modalBody').querySelector('input,textarea')?.focus();
+
+  $('modalBody').querySelectorAll('[data-duration]').forEach(btn=>{
+    btn.onclick = ()=>{
+      const n = Number(btn.dataset.duration);
+      if(selectedDurations.includes(n)){
+        selectedDurations = selectedDurations.filter(x=>x!==n);
+        btn.classList.remove('active');
+      }else{
+        selectedDurations.push(n);
+        btn.classList.add('active');
+      }
+    };
+  });
+
+  $('addDurationsBtn').onclick = addSelectedDurations;
+  $('deleteDurationsBtn').onclick = deleteSelectedDurations;
+  $('closeModalBtn').onclick = closeModal;
 }
 
-function close(){
-  modalSave=null;
+function renderMiniHistory(d){
+  const list = entriesFor(d,wk()).slice().reverse();
+
+  if(!list.length){
+    return `<div class="mutedText">لا توجد جلسات مسجلة لهذا الأسبوع</div>`;
+  }
+
+  return list.map(x=>`
+    <div class="entryrow">
+      <span>${esc(x.title || fmt(x.minutes))} <span class="mutedText">· ${fmt(x.minutes)}</span></span>
+      <button data-modalundo="${esc(x.id)}">تراجع</button>
+    </div>
+  `).join('');
+}
+
+function addSelectedDurations(){
+  if(!currentModalSection) return;
+  if(!selectedDurations.length){
+    alert('اختر مدة واحدة على الأقل');
+    return;
+  }
+
+  const d = currentModalSection;
+
+  selectedDurations.forEach(min=>{
+    wk().entries.push({
+      id: Date.now() + '-' + Math.random().toString(36).slice(2),
+      section: d.id,
+      title: 'جلسة ' + d.name,
+      minutes: min,
+      at: new Date().toISOString()
+    });
+  });
+
+  closeModal();
+  render();
+}
+
+function deleteSelectedDurations(){
+  if(!currentModalSection) return;
+
+  const d = currentModalSection;
+  const sectionEntries = entriesFor(d, wk());
+
+  if(!sectionEntries.length){
+    alert('لا توجد جلسات للحذف');
+    return;
+  }
+
+  const removeCount = selectedDurations.length || 1;
+  const idsToRemove = sectionEntries.slice(-removeCount).map(x=>x.id);
+
+  wk().entries = wk().entries.filter(x=>!idsToRemove.includes(x.id));
+
+  closeModal();
+  render();
+}
+
+function openDetailsModal(sectionId){
+  const d = defs.find(x=>x.id===sectionId);
+
+  $('modalTitle').textContent = 'تفاصيل · ' + d.name;
+  $('modalBody').innerHTML = `
+    <textarea id="notesInput" placeholder="ما الذي تعمل عليه؟ ملاحظات مستمرة...">${esc(state.notes?.[d.id] || '')}</textarea>
+
+    <div class="modalLabel">جلسات الأسبوع</div>
+    <div id="detailHistory">
+      ${renderMiniHistory(d)}
+    </div>
+
+    <div class="modalActions">
+      <button class="save" id="saveDetailsBtn">حفظ</button>
+      <button class="close" id="closeModalBtn">إغلاق</button>
+    </div>
+  `;
+
+  $('overlay').classList.remove('hide');
+
+  $('saveDetailsBtn').onclick = ()=>{
+    state.notes[d.id] = $('notesInput').value;
+    persist();
+    closeModal();
+    render();
+  };
+
+  $('closeModalBtn').onclick = closeModal;
+}
+
+function closeModal(){
+  currentModalSection = null;
+  selectedDurations = [];
   $('overlay').classList.add('hide');
 }
 
-$('closeModal').onclick=close;
-
-$('overlay').onclick=e=>{
-  if(e.target===$('overlay'))close();
+$('overlay').onclick = e=>{
+  if(e.target === $('overlay')) closeModal();
 };
 
-$('saveModal').onclick=()=>modalSave?.();
+function handleCardClick(e){
+  const b = e.target.closest('button');
+  if(!b) return;
 
-function handle(e){
-  const b=e.target.closest('button');
-  if(!b)return;
-
-  const w=wk();
-  const id=b.dataset.inc||b.dataset.dec;
-
-  if(id){
-    const d=defs.find(x=>x.id===id);
-    const n=nSessions(d,w);
-    w.counts[d.id]=Math.min(
-      d.max,Math.max(d.min,n+(b.dataset.inc?1:-1))
-    );
-    render();
-    return;
-  }
-
-  if(b.dataset.add){
-    const d=defs.find(x=>x.id===b.dataset.add);
-    const n=nSessions(d,w);
-    if(es(d,w).length>=n)return;
-
-    popup(
-      'تسجيل جلسة · '+d.name,
-      '<input id="activityInput" maxlength="120" placeholder="اسم ما تعلمته (اختياري)">',
-      ()=>{
-        w.entries.push({
-          id:Date.now()+'-'+Math.random().toString(36).slice(2),
-          section:d.id,
-          title:$('activityInput').value.trim()||'جلسة '+d.name,
-          minutes:d.total/n,
-          at:new Date().toISOString()
-        });
-        close();
-        render();
-      }
-    );
-    return;
-  }
-
-  if(b.dataset.undo){
-    if(confirm('التراجع عن هذه الجلسة؟')){
-      w.entries=w.entries.filter(x=>String(x.id)!==b.dataset.undo);
-      render();
-    }
+  if(b.dataset.session){
+    openSessionModal(b.dataset.session);
     return;
   }
 
   if(b.dataset.detail){
-    const d=defs.find(x=>x.id===b.dataset.detail);
+    openDetailsModal(b.dataset.detail);
+    return;
+  }
 
-    const history=es(d,w).map(x=>`
-      <div class="entryrow">
-        <span>
-          ${esc(x.title||'جلسة')}
-          <small style="color:#8897a7">· ${fmt(x.minutes)}</small>
-        </span>
-        <button data-modalundo="${esc(x.id)}">تراجع</button>
-      </div>
-    `).join('');
-
-    popup(
-      'تفاصيل · '+d.name,
-      `<textarea id="notesInput" placeholder="ما الذي تعمل عليه؟ ملاحظات مستمرة...">${esc(state.notes?.[d.id]||'')}</textarea>
-       <div class="modalLabel">جلسات الأسبوع</div>
-       ${history||'<div class="muted">لا توجد جلسات مسجلة</div>'}`,
-      ()=>{
-        state.notes[d.id]=$('notesInput').value;
-        persist();
-        close();
-        render();
-      }
-    );
+  if(b.dataset.undo){
+    if(confirm('التراجع عن آخر جلسة؟')){
+      wk().entries = wk().entries.filter(x=>String(x.id)!==b.dataset.undo);
+      render();
+    }
+    return;
   }
 }
 
-['english','knowledge','professional'].forEach(x=>
-  $(x).addEventListener('click',handle)
-);
+['english','knowledge','professional'].forEach(id=>{
+  $(id).addEventListener('click', handleCardClick);
+});
 
-$('modalBody').addEventListener('click',e=>{
-  const b=e.target.closest('[data-modalundo]');
-  if(!b)return;
+$('modalBody').addEventListener('click', e=>{
+  const b = e.target.closest('[data-modalundo]');
+  if(!b) return;
 
-  if(!confirm('التراجع عن هذه الجلسة؟'))return;
+  if(!confirm('التراجع عن هذه الجلسة؟')) return;
 
-  wk().entries=wk().entries.filter(
-    x=>String(x.id)!==b.dataset.modalundo
-  );
+  wk().entries = wk().entries.filter(x=>String(x.id)!==b.dataset.modalundo);
 
-  const d=defs.find(
-    x=>x.id===$('modalTitle').textContent.split('· ').at(-1)
-  );
-
-  if(d){
-    state.notes[d.id]=$('notesInput')?.value??state.notes[d.id];
+  const notesInput = $('notesInput');
+  if(currentModalSection && notesInput){
+    state.notes[currentModalSection.id] = notesInput.value;
   }
-  close();
+
   render();
+
+  if(currentModalSection){
+    if($('notesInput')){
+      openDetailsModal(currentModalSection.id);
+    }else{
+      openSessionModal(currentModalSection.id);
+    }
+  }
 });
 
 function renderStats(){
-  const all=Object.entries(state.weeks)
-    .sort((a,b)=>b[0].localeCompare(a[0]));
+  const all = Object.entries(state.weeks).sort((a,b)=>b[0].localeCompare(a[0]));
+  const past = all.filter(([k])=>k < current);
 
-  const past=all.filter(([k])=>k<current);
+  $('nowPct').textContent = Math.round((total(wk())/BUDGET)*100)+'%';
 
-  $('nowPct').textContent=
-    Math.round(total(wk())/BUDGET*100)+'%';
+  $('avgPct').textContent = past.length
+    ? Math.round(sum(past.map(([,w])=>(total(w)/BUDGET)*100))/past.length)+'%'
+    : '—';
 
-  $('avgPct').textContent=past.length
-    ?Math.round(sum(past.map(([,w])=>total(w)/BUDGET*100))/past.length)+'%'
-    :'—';
+  $('allTime').textContent = fmt(sum(all.map(([,w])=>total(w))));
+  $('fullWeeks').textContent = past.filter(([,w])=>total(w)>=BUDGET-.01).length;
 
-  $('allTime').textContent=fmt(
-    sum(all.map(([,w])=>total(w)))
-  );
-
-  $('fullWeeks').textContent=past.filter(
-    ([,w])=>total(w)>=BUDGET-.01
-  ).length;
-
-  $('sectionStats').innerHTML=defs.map(d=>{
-    const p=past.length
-      ?sum(past.map(([,w])=>spent(d,w)/d.total*100))/past.length
-      :0;
+  $('sectionStats').innerHTML = defs.map(d=>{
+    const p = past.length
+      ? sum(past.map(([,w])=>(spent(d,w)/d.total)*100))/past.length
+      : 0;
 
     return `
       <div class="barrow">
         <div class="line">
           <span>${d.name}</span>
-          <b>${past.length?Math.round(p)+'%':'—'}</b>
+          <b>${past.length ? Math.round(p)+'%' : '—'}</b>
         </div>
         <div class="track">
           <div class="fill" style="background:${d.color};width:${Math.min(100,p)}%"></div>
         </div>
-      </div>`;
+      </div>
+    `;
   }).join('');
 
-  $('history').innerHTML=all.map(([k,w])=>`
+  $('history').innerHTML = all.map(([k,w])=>`
     <div class="historyrow">
-      <span>${k}${k===current?' · الحالي':''}</span>
-      <b>${fmt(total(w))} · ${Math.round(total(w)/BUDGET*100)}%</b>
+      <span>${k}${k===current ? ' · الحالي' : ''}</span>
+      <b>${fmt(total(w))} · ${Math.round((total(w)/BUDGET)*100)}%</b>
     </div>
   `).join('');
 
   if(!past.length){
-    $('insight').textContent=
-      'سيظهر تحليل المتوسط بعد اكتمال الأسبوع الأول.';
+    $('insight').textContent = 'سيظهر تحليل المتوسط بعد اكتمال الأسبوع الأول.';
     return;
   }
 
-  const ranked=defs.map(d=>({
+  const ranked = defs.map(d=>({
     name:d.name,
-    score:sum(
-      past.map(([,w])=>spent(d,w)/d.total*100)
-    )/past.length
+    score: sum(past.map(([,w])=>(spent(d,w)/d.total)*100))/past.length
   })).sort((a,b)=>b.score-a.score);
 
-  $('insight').textContent=
-    `الأكثر انتظامًا: ${ranked[0].name} (${Math.round(ranked[0].score)}%). `+
-    `الأقل: ${ranked.at(-1).name} (${Math.round(ranked.at(-1).score)}%). `+
+  $('insight').textContent =
+    `الأكثر انتظامًا: ${ranked[0].name} (${Math.round(ranked[0].score)}%). ` +
+    `الأقل: ${ranked.at(-1).name} (${Math.round(ranked.at(-1).score)}%). ` +
     'المتوسط يحتسب الأسابيع المنتهية فقط.';
 }
 
-document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{
-  const tab=b.dataset.tab;
+document.querySelectorAll('[data-tab]').forEach(btn=>{
+  btn.onclick = ()=>{
+    const tab = btn.dataset.tab;
 
-  $('home').classList.toggle('hide',tab!=='home');
-  $('analytics').classList.toggle('hide',tab!=='analytics');
+    $('home').classList.toggle('hide', tab!=='home');
+    $('analytics').classList.toggle('hide', tab!=='analytics');
 
-  document.querySelectorAll('[data-tab]').forEach(x=>
-    x.classList.toggle('active',x===b)
-  );
+    document.querySelectorAll('[data-tab]').forEach(x=>{
+      x.classList.toggle('active', x===btn);
+    });
 
-  render();
+    render();
+  };
 });
 
-$('exportBtn').onclick=()=>{
+$('exportBtn').onclick = ()=>{
   persist();
-  const u=URL.createObjectURL(
-    new Blob([JSON.stringify(state,null,2)],{type:'application/json'})
-  );
-  const a=document.createElement('a');
-  a.href=u;
-  a.download='development-wallet-backup-'+local(new Date())+'.json';
+  const blob = new Blob([JSON.stringify(state,null,2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'development-wallet-backup-' + local(new Date()) + '.json';
   a.click();
-  setTimeout(()=>URL.revokeObjectURL(u),1000);
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
 };
 
-$('importBtn').onclick=()=>$('importFile').click();
+$('importBtn').onclick = ()=>$('importFile').click();
 
-$('importFile').onchange=async e=>{
-  const f=e.target.files[0];
-  if(!f)return;
+$('importFile').onchange = async e=>{
+  const f = e.target.files[0];
+  if(!f) return;
 
   try{
-    const s=JSON.parse(await f.text());
+    const s = JSON.parse(await f.text());
 
     if(
-      s.version!==1||
-      !s.weeks||
-      typeof s.weeks!=='object'||
+      s.version!==1 ||
+      !s.weeks ||
+      typeof s.weeks!=='object' ||
       Array.isArray(s.weeks)
-    )throw Error();
+    ){
+      throw Error();
+    }
 
     if(confirm('استبدال بياناتك الحالية بالنسخة الاحتياطية؟')){
-      state={...s,notes:s.notes||{}};
+      state = {...s, notes:s.notes || {}};
       persist();
       render();
     }
@@ -916,22 +1008,22 @@ $('importFile').onchange=async e=>{
     alert('النسخة الاحتياطية غير صالحة');
   }
 
-  e.target.value='';
+  e.target.value = '';
 };
 
 document.addEventListener('visibilitychange',()=>{
-  if(!document.hidden)render();
+  if(!document.hidden) render();
 });
 
-window.addEventListener('focus',render);
+window.addEventListener('focus', render);
 
 setInterval(()=>{
-  if(weekKey(new Date())!==current)render();
-},60000);
+  if(weekKey(new Date()) !== current) render();
+}, 60000);
 
 render();
 
-if('serviceWorker'in navigator){
+if('serviceWorker' in navigator){
   navigator.serviceWorker.register('./sw.js').catch(()=>{});
 }
 </script>
