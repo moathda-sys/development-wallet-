@@ -1,5 +1,4 @@
-
-const CACHE='development-wallet-v3';
+const CACHE='development-wallet-v4';
 
 const ASSETS=[
   './',
@@ -27,7 +26,7 @@ self.addEventListener('activate',e=>
 );
 
 self.addEventListener('fetch',e=>{
-  if(e.request.method!=='GET')return;
+  if(e.request.method!=='GET') return;
 
   e.respondWith(
     fetch(e.request)
