@@ -1,4 +1,4 @@
-const CACHE='development-wallet-v4';
+const CACHE='development-wallet-v5';
 
 const ASSETS=[
   './',
